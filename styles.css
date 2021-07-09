@@ -1,0 +1,43 @@
+body {
+    font-family: "Rowdies", cursive;
+    margin: 0;
+    padding: 0;
+    background-image: url("../assets/background.png");
+    height: 100vh;
+  }
+  
+  .hero-heading {
+    padding-top: 35vh;
+    text-align: center;
+    font-size: 5rem;
+    color: rgb(253, 253, 253);
+  }
+  
+  .start-btn {
+    display: flex;
+    font-size: 1.5em;
+    font-family: "Rowdies", cursive;
+    background-color: #225885;
+    border: 0;
+    padding: 1em 2em;
+    border-radius: 2em;
+    margin: auto;
+    align-items: center;
+    margin-top: 1.2em;
+    color: white;
+  }
+  
+  .app {
+    height: 100%;
+    background-image: url(assets/background.png);
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .start-btn:hover {
+    transform: scale(1.05, 1.05);
+    background-color: #0f3153;
+    cursor: pointer;
+  }
+  
