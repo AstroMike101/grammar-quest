@@ -1,22 +1,23 @@
  
 let btnSound = document.querySelector("#bubble-sound");
 let musicSound = document.querySelector("#music-sound");
-let musicOnBtn = document.querySelector('.musicOnBtn');
-let musicOffBtn = document.querySelector('.musicOffBtn')
+let musicBtn = document.querySelector('.musicBtn'); 
 let start = document.querySelector(".start-btn");
 let body = document.querySelector(".app");
+let isPlaying = false
 
-
-
-
-musicOffBtn.addEventListener("click", () => {
-  musicSound.pause();
-})
-
-musicOnBtn.addEventListener("click", () => {
-  musicSound.play();
-})
-
+function musicStart(){
+  if(isPlaying){
+    musicSound.pause()
+    isPlaying = false
+  }
+  else{
+    musicSound.play();
+    isPlaying = true 
+  } 
+   
+}
+ 
 start.addEventListener("mouseover", () => {
   btnSound.play();
   
