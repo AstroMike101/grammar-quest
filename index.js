@@ -1,14 +1,28 @@
  
-
 let btnSound = document.querySelector("#bubble-sound");
+let musicSound = document.querySelector("#music-sound");
+let musicOnBtn = document.querySelector('.musicOnBtn');
+let musicOffBtn = document.querySelector('.musicOffBtn')
 let start = document.querySelector(".start-btn");
 let body = document.querySelector(".app");
 
+
+
+musicOffBtn.addEventListener("click", () => {
+  musicSound.pause();
+})
+
+musicOnBtn.addEventListener("click", () => {
+  musicSound.play();
+})
+
 start.addEventListener("mouseover", () => {
   btnSound.play();
+  
 });
 
 start.addEventListener("click", () => {
+  musicSound.play();
   document.querySelector(".hero-heading").remove();
   start.remove();
   main();
