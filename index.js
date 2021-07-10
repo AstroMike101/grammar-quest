@@ -15,10 +15,12 @@ musicOffBtn.addEventListener("click", () => {
 
 musicOnBtn.addEventListener("click", () => {
   musicSound.play();
+  
 })
 
 start.addEventListener("mouseover", () => {
   btnSound.play();
+  
   
 });
 

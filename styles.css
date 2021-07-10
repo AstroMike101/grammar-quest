@@ -17,9 +17,10 @@ body {
     display: flex;
     font-size: 1.5em;
     font-family: "Rowdies", cursive;
-    background-color: #225885;
+    /*background-color: #225885; */
+    background-color:#00bcd4;
     border: 0;
-    padding: 1em 2em;
+    padding: 1em 3em;
     border-radius: 2em;
     margin: auto;
     justify-content: center;
