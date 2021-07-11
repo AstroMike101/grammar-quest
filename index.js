@@ -1,4 +1,3 @@
- 
 let btnSound = document.querySelector("#bubble-sound");
 let musicSound = document.querySelector("#music-sound");
 let musicBtn = document.querySelector('.musicBtn'); 
@@ -40,8 +39,12 @@ function main() {
   body.appendChild(options[0]);
   body.appendChild(options[1]);
   body.appendChild(options[2]);
+  judge.classList.add("judge")
+  header.classList.add("quiz-scr")
+  
   judge.textContent = "Choose the correct option";
-  let nextbtn = document.createElement("button")
+
+  let nextbtn = document.createElement("button") 
 
   random();
   
@@ -55,7 +58,8 @@ function main() {
         quiz[i].options[1],
         quiz[i].options[2],
         quiz[i].correct
-      );
+        );
+        judge.textContent = "Choose the correct option"; 
       nextbtn.remove()
     }
   }
@@ -63,13 +67,12 @@ function main() {
   function next(){
     body.appendChild(nextbtn)
     nextbtn.textContent = "Next"
-   
-    judge.textContent = "Well done"; 
+    judge.textContent = "Well done!"
     nextbtn.addEventListener("click", random)
   }
 
-  function choices(question, answer, option1, option2, option3, correct) {
-    header.innerHTML = question;  
+  function choices(question, answer, option1, option2, option3, correct){
+  header.innerHTML = question;  
     for (let i = 0; i < quiz[0].options.length; i++) {
         
       options[i].addEventListener("click", () => {
@@ -77,6 +80,7 @@ function main() {
           judge.textContent = "Correct";
           header.innerHTML = correct;
           setTimeout(() => {
+            
            next() 
           }, 1000);
         } else {
