@@ -9,14 +9,14 @@
   <body>
     
     <div class="app">
-      <div class="headerDiv"><button class='musicOnBtn'>Music On</button></div>
-      <div class="headerDiv"><button class='musicOffBtn'>Music Off</button></div>
+      <div class="headerDiv">
+        <button onclick="musicStart()" class='musicBtn'>Music <img class="music-btn" src="./assets/sound.png" ></button>
+      </div>
       
 			<div class="hero-heading"><b>The Punctuation Game</div>
 				<button class="start-btn">Start</button>
 				<audio id="bubble-sound" src="./assets/bubble.mp3"></audio>
-        <audio loop src="/assets/happyRepeat.mp3" id="music-sound"></audio>
-        
+        <audio  id="music-sound" loop src="./assets/happyRepeat.mp3"></audio> 
     </div>
     <div id="demo"></div>
     <script src="index.js"></script>

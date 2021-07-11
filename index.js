@@ -24,7 +24,6 @@ start.addEventListener("mouseover", () => {
 });
 
 start.addEventListener("click", () => {
-  musicSound.play();
   document.querySelector(".hero-heading").remove();
   start.remove();
   main();
@@ -57,9 +56,8 @@ function main() {
         quiz[i].options[2],
         quiz[i].correct
       );
-   
+      nextbtn.remove()
     }
-    nextbtn.remove()
   }
 
   function next(){
