@@ -65,14 +65,50 @@ height: 30px;
 
 .quiz-scr{
   text-align: center;
-  font-size: 3em;
-  color: #14496d; 
+  font-size: 3.5em;
+  color: #0e3c61;
+  text-shadow: rgb(233, 233, 233) 0px 0px 5px;
+  margin-top: 5vh;
 }
 
 .judge{
   text-align: center;
-  margin-top: 10vh;
-  font-size: 4em;
-  color: #0e3c61;
-  text-shadow: rgb(255, 255, 255) 0px 0px 5px;
+  margin-top: 15vh;
+  font-size: 2.7em;
+  color: rgb(207, 207, 207);
+  text-shadow: black 0px 0px 5px;
+
+}
+
+.choices{
+  font-size: 3em;
+  display: inline-block;
+  align-self: center;
+  padding: 2vh 10vh 2vh 10vh;
+  margin: 15vh 0 5vh 28vh;
+  background-image: linear-gradient(#EFA09E, #1DACED);
+  border: none;
+}
+
+.nextBtn{
+  font-size: 2em;
+  display:  flex;
+  float: right;
+  margin-top: 35vh;
+  margin-right: 10vh;
+  border-radius: 20vh;
+  background-color: rgb(84, 189, 224);
+  padding-left: 5vh;
+  padding-right: 5vh;
+
+  text-align: center;
+  animation: nextBtn 1s ;
+}
+
+@keyframes nextBtn {
+  0%   {opacity: 0%;}
+  25%  {opacity: 25%;}
+  50%  {opacity: 50%;}
+  75%  {opacity: 75%;}
+  100% {opacity: 100%;}
 }
