@@ -57,6 +57,8 @@ body {
   background-repeat: none;
   background-position: center;
   background-size: cover;
+  
+  
 }
 
 .start-btn:hover , .musicBtn:hover {
@@ -64,7 +66,7 @@ body {
   background-color: #0f3153;
   cursor: pointer;
 }
-
+/* quiz question */
 .quiz-scr{
   text-align: center;
   font-size: 3.5em;
@@ -73,6 +75,7 @@ body {
   margin-top: 5vh;
 }
 
+/* displays if right or wrong */
 .judge{
   text-align: center;
   margin-top: 10vh;
@@ -80,6 +83,7 @@ body {
   color: rgb(207, 207, 207);
   text-shadow: black 0px 0px 5px;
 }
+
 .choicesDiv {
   display: flex; 
   flex-direction: row;
@@ -87,7 +91,6 @@ body {
   flex-wrap: wrap;
   
 }
-
 
 
 .choices{
@@ -132,14 +135,14 @@ body {
   and (min-device-width: 375px) 
   and (max-device-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3) { 
-  .choices {
-      
-    font-size: 2em;
+  .choices {   
+    font-size: 2.5em;
     margin: 20px;
     padding: 1vh 3.5vh 1vh 3.5vh;
     position: relative;
-    left: 4em;
-  
+    left: 3.5em;
+    top: 2em;
+   
   
     }
 }
@@ -151,11 +154,12 @@ body {
   and (-webkit-min-device-pixel-ratio: 3) { 
 
 .choices {
-  font-size: 2em;
+  font-size: 2.5em;
   margin: 20px;
   padding: 1vh 3.5vh 1vh 3.5vh;
   position: relative;
-  left: 5em;
+  left: 4.5em;
+  
 }
 }
 

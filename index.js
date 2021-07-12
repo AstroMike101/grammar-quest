@@ -47,7 +47,7 @@ function main() {
 
   judge.classList.add("judge")
   header.classList.add("quiz-scr")
-  judge.textContent = "Choose the correct option";
+  judge.textContent = "Choose the correct option:";
 
   options[0].classList.add("choices")
   options[1].classList.add("choices")
