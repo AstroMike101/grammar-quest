@@ -5,10 +5,12 @@ let musicOnBtn = document.querySelector('.musicOnBtn');
 let musicOffBtn = document.querySelector('.musicOffBtn')
 let start = document.querySelector(".start-btn");
 let body = document.querySelector(".app");
+let heroHeading = document.querySelector(".hero-heading");
+let startBtnDiv = document.querySelector('.startBtnDiv');
 
 
 
-
+// Music functions for playing and stopping music
 musicOffBtn.addEventListener("click", () => {
   musicSound.pause();
 })
@@ -21,13 +23,14 @@ musicOnBtn.addEventListener("click", () => {
 start.addEventListener("mouseover", () => {
   btnSound.play();
   
-  
 });
 
 start.addEventListener("click", () => {
   musicSound.play();
-  document.querySelector(".hero-heading").remove();
+  heroHeading.remove();
   start.remove();
+  startBtnDiv.remove();
+  
   main();
 });
 
@@ -117,3 +120,6 @@ const quiz = [
 
 
  
+
+
+

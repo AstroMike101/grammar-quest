@@ -25,12 +25,16 @@ body {
     font-size: 5rem;
     color: rgb(253, 253, 253);
   }
+
+  .startBtnDiv{
+    display: flex;
+    flex-direction: row;
+  }
   
   .start-btn {
-    display: flex;
     font-size: 1.5em;
     font-family: "Rowdies", cursive;
-    /*background-color: #225885; */
+    -webkit-appearance: none;
     background-color:#00bcd4;
     border: 0;
     padding: 1em 3em;
@@ -40,24 +44,25 @@ body {
     align-items: center;
     margin-top: 1.2em;
     color: white;
+    box-shadow: 0 2px 25px white;
   }
   
   .headerDiv {
     display: flex;
     justify-content: flex-end;
-
     padding-right: 0.5em;
     
  
   }
 
-  .musicOffBtn, .musicOnBtn { 
+  .musicOffBtn, .musicOnBtn , .rulesBtn{ 
     font-size: 1.2em;
     font-family: "rowdies", cursive;
     background-color: #225885;
     margin: 10px;
     padding: 10px;
     color:white;
+    box-shadow: 0 2px 25px white;
  }
 
 
@@ -71,9 +76,12 @@ body {
     background-size: cover;
   }
   
-  .start-btn:hover , .musicOffBtn:hover , .musicOnBtn:hover{
+  .start-btn:hover , .musicOffBtn:hover , .musicOnBtn:hover, .rulesBtn:hover {
     transform: scale(1.05, 1.05);
     background-color: #0f3153;
-    cursor: pointer;
+    cursor:pointer;
   }
+
   
+
+
