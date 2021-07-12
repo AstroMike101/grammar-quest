@@ -33,17 +33,22 @@ function main() {
   let options = Array.from({ length: 3 }, () =>
     document.createElement("button")
   ); 
+  let choicesDiv = document.createElement('div');
+  choicesDiv.classList.add('choicesDiv');
   let nextbtn = document.createElement("button") 
+  
   
   body.appendChild(header);
   body.appendChild(judge);
-  body.appendChild(options[0]);
-  body.appendChild(options[1]);
-  body.appendChild(options[2]);
+  body.appendChild(choicesDiv);
+  choicesDiv.appendChild(options[0]);
+  choicesDiv.appendChild(options[1]);
+  choicesDiv.appendChild(options[2]);
 
   judge.classList.add("judge")
   header.classList.add("quiz-scr")
   judge.textContent = "Choose the correct option";
+
   options[0].classList.add("choices")
   options[1].classList.add("choices")
   options[2].classList.add("choices")

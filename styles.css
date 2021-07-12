@@ -75,20 +75,30 @@ body {
 
 .judge{
   text-align: center;
-  margin-top: 15vh;
+  margin-top: 10vh;
   font-size: 2.7em;
   color: rgb(207, 207, 207);
   text-shadow: black 0px 0px 5px;
 }
+.choicesDiv {
+  display: flex; 
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  
+}
+
+
 
 .choices{
-  font-size: 3em;
+  font-size: 2em;
   display: inline-block;
-  align-self: center;
+  align-self:auto;
   padding: 2vh 10vh 2vh 10vh;
-  margin: 15vh 0 5vh 28vh;
+  margin: 7vh 0 5vh 28vh;
   background-image: linear-gradient(#EFA09E, #1DACED);
   border: 1px solid darkblue;
+  
 }
 
 .choices:active{
@@ -117,3 +127,36 @@ body {
   75%  {opacity: 75%;}
   100% {opacity: 100%;}
 }
+/* media query for iphone X to make buttons centered */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+  .choices {
+      
+    font-size: 2em;
+    margin: 20px;
+    padding: 1vh 3.5vh 1vh 3.5vh;
+    position: relative;
+    left: 4em;
+  
+  
+    }
+}
+/* media query for iPhone 6+, 7+ and 8+ to make buttons centered */
+
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+.choices {
+  font-size: 2em;
+  margin: 20px;
+  padding: 1vh 3.5vh 1vh 3.5vh;
+  position: relative;
+  left: 5em;
+}
+}
+
+
