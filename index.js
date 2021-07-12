@@ -4,18 +4,18 @@ let musicBtn = document.querySelector('.musicBtn');
 let start = document.querySelector(".start-btn");
 let body = document.querySelector(".app");
 let headerDiv = document.querySelector('.headerDiv');
-let isPlaying = false
-
+let isPlaying = false;
+let score = 0;
 
 
 function musicStart(){
   if(isPlaying){
     musicSound.pause()
-    isPlaying = false
+    isPlaying = false;
   }
   else{
     musicSound.play();
-    isPlaying = true 
+    isPlaying = true;
   } 
 }
  
@@ -40,7 +40,7 @@ function main() {
 
   let scoreBoard = document.createElement('p')
   scoreBoard.classList.add('scoreBoard')
-  scoreBoard.textContent = 'Score: ';
+  scoreBoard.textContent = 'Score: ' + score;
 
  //creates a div for the choice buttons 
   let choicesDiv = document.createElement('div');
@@ -108,6 +108,8 @@ function main() {
         if (i === answer) {
           judge.textContent = "Correct";
           header.innerHTML = correct;
+          score++;
+          scoreBoard.textContent = "Score: " + score;
           setTimeout(() => {
            next() 
           }, 1000);
