@@ -33,14 +33,16 @@ start.addEventListener("click", () => {
 function main() {
   let header = document.createElement("div"); //  quiz question
   let judge = document.createElement("h2"); //says right or wrong under quiz
+  let score = 0;
   let options = Array.from({ length: 3 }, () =>
     document.createElement("button")
+    
   ); 
 //scoreboard creation, adding a class to it, and adding text
 
   let scoreBoard = document.createElement('p')
   scoreBoard.classList.add('scoreBoard')
-  scoreBoard.textContent = 'Score: ';
+
 
  //creates a div for the choice buttons 
   let choicesDiv = document.createElement('div');
