@@ -3,7 +3,9 @@ let musicSound = document.querySelector("#music-sound");
 let musicBtn = document.querySelector('.musicBtn'); 
 let start = document.querySelector(".start-btn");
 let body = document.querySelector(".app");
+let headerDiv = document.querySelector('.headerDiv');
 let isPlaying = false
+
 
 function musicStart(){
   if(isPlaying){
@@ -36,8 +38,12 @@ function main() {
   let choicesDiv = document.createElement('div');
   choicesDiv.classList.add('choicesDiv');
   let nextbtn = document.createElement("button") 
+  let scoreBoard = document.createElement('p')
+  scoreBoard.classList.add('scoreBoard')
+  scoreBoard.textContent = 'Score: ';
+
   
-  
+  headerDiv.insertBefore(scoreBoard,musicBtn);
   body.appendChild(header);
   body.appendChild(judge);
   body.appendChild(choicesDiv);

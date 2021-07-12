@@ -36,11 +36,24 @@ body {
 
 }
 
+.scoreBoard { 
+  font-size: 2.5em;
+  justify-self: center;
+  position: relative;
+  right: 37vw;
+  
+  
+  
+}
+
 .musicBtn{ 
   font-size: 1.5em;
   font-family: "Rowdies", cursive;
   background-color: #225885;
   margin-top: 10px;
+  margin-bottom: 100px;
+
+
   color:white;
   box-shadow: 0 2px 25px white;
 }
@@ -61,7 +74,7 @@ body {
   
 }
 
-.start-btn:hover , .musicBtn:hover {
+.start-btn:hover , .musicBtn:hover , .choices:hover{
   transform: scale(1.05, 1.05);
   background-color: #0f3153;
   cursor: pointer;
@@ -101,6 +114,7 @@ body {
   margin: 7vh 0 5vh 28vh;
   background-image: linear-gradient(#EFA09E, #1DACED);
   border: 1px solid darkblue;
+  box-shadow: 0 2px 25px white;
   
 }
 
@@ -140,7 +154,7 @@ body {
     margin: 20px;
     padding: 1vh 3.5vh 1vh 3.5vh;
     position: relative;
-    left: 3.5em;
+    left: 2.7em;
     top: 2em;
    
   
@@ -158,7 +172,7 @@ body {
   margin: 20px;
   padding: 1vh 3.5vh 1vh 3.5vh;
   position: relative;
-  left: 4.5em;
+  left: 3.5em;
   
 }
 }
