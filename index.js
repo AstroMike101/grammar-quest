@@ -23,6 +23,7 @@ start.addEventListener("mouseover", () => {
 });
 
 start.addEventListener("click", () => {
+  musicStart();
   document.querySelector(".hero-heading").remove();
   start.remove();
   main();
@@ -65,17 +66,18 @@ function main() {
         );
         judge.textContent = "Choose the correct option"; 
       nextbtn.remove()
+      
     }
   }
-
+  
   function next(){
     body.appendChild(nextbtn)
     nextbtn.textContent = "Next"
     judge.textContent = "Well done!"
     nextbtn.addEventListener("click", random)
   }
-
-  function choices(question, answer, option1, option2, option3, correct){
+  
+  function choices(question, answer, option1, option2, option3, correct){ 
   header.innerHTML = question;  
     for (let i = 0; i < quiz[0].options.length; i++) {
         
