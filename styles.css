@@ -89,7 +89,7 @@ body {
   padding: 2vh 10vh 2vh 10vh;
   margin: 15vh 0 5vh 28vh;
   background-image: linear-gradient(#EFA09E, #1DACED);
-  border: none;
+  border: 1px solid darkblue;
 }
 
 .nextBtn{

@@ -14,7 +14,6 @@ function musicStart(){
     musicSound.play();
     isPlaying = true 
   } 
-   
 }
  
 start.addEventListener("mouseover", () => {
