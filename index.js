@@ -94,26 +94,38 @@ function main() {
   }
 }
 
-const quiz = [
-  {
-    question: "____ exam was yesterday",
-    options: ["him", "he", "his"],
-    answer: 2,
-    correct: "<u>His</u> exam was yesterday"
-  },
-  {
-    question: "The ___ was on the street",
-    options: ["men", "man", "mens"],
-    answer: 1,
-    correct: "The <u>man</u> was on the street"
-  },
-  {
-    question: "The _____ toy was stolen",
-    options: ["kids", "kid", "kid's"],
-    answer: 2,
-    correct: "The <u>kid's</u> toy was stolen"
+function makeQuiz(operator) {
+  var quiz = [];
+  for (let i = 0; i <= 20; i++) {
+    var firstNumber = Math.floor(Math.random() * 13);
+    var secondNumber = Math.floor(Math.random() * 13);
+    if (operator == " + ") {
+      var answer = firstNumber + secondNumber;
+    } else if (operator == " - ") {
+      var answer = firstNumber - secondNumber;
+    } else if (operator == " * ") {
+      var answer = firstNumber * secondNumber;
+    } else {
+      var answer = firstNumber / secondNumber;
+    }
+    let group = {
+      question:
+        firstNumber.toString() + operator + secondNumber.toString() + " = ???",
+      options: [answer, "wrong", "wrong"],
+      answer: 0,
+      correct:
+        firstNumber.toString() +
+        operator +
+        secondNumber.toString() +
+        " = " +
+        answer,
+    };
+    quiz.push(group);
   }
-];
+  return quiz;
+}
+
+const quiz = makeQuiz(" + ");
 
 
  
