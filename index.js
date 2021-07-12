@@ -1,36 +1,30 @@
- 
 let btnSound = document.querySelector("#bubble-sound");
 let musicSound = document.querySelector("#music-sound");
-let musicOnBtn = document.querySelector('.musicOnBtn');
-let musicOffBtn = document.querySelector('.musicOffBtn')
+let musicBtn = document.querySelector('.musicBtn'); 
 let start = document.querySelector(".start-btn");
 let body = document.querySelector(".app");
-let heroHeading = document.querySelector(".hero-heading");
-let startBtnDiv = document.querySelector('.startBtnDiv');
+let isPlaying = false
 
-
-
-// Music functions for playing and stopping music
-musicOffBtn.addEventListener("click", () => {
-  musicSound.pause();
-})
-
-musicOnBtn.addEventListener("click", () => {
-  musicSound.play();
-  
-})
-
+function musicStart(){
+  if(isPlaying){
+    musicSound.pause()
+    isPlaying = false
+  }
+  else{
+    musicSound.play();
+    isPlaying = true 
+  } 
+   
+}
+ 
 start.addEventListener("mouseover", () => {
   btnSound.play();
   
 });
 
 start.addEventListener("click", () => {
-  musicSound.play();
-  heroHeading.remove();
+  document.querySelector(".hero-heading").remove();
   start.remove();
-  startBtnDiv.remove();
-  
   main();
 });
 
@@ -40,13 +34,21 @@ function main() {
   let options = Array.from({ length: 3 }, () =>
     document.createElement("button")
   ); 
+  let nextbtn = document.createElement("button") 
+  
   body.appendChild(header);
   body.appendChild(judge);
   body.appendChild(options[0]);
   body.appendChild(options[1]);
   body.appendChild(options[2]);
+
+  judge.classList.add("judge")
+  header.classList.add("quiz-scr")
   judge.textContent = "Choose the correct option";
-  let nextbtn = document.createElement("button")
+  options[0].classList.add("choices")
+  options[1].classList.add("choices")
+  options[2].classList.add("choices")
+  nextbtn.classList.add("nextBtn")
 
   random();
   
@@ -60,22 +62,22 @@ function main() {
         quiz[i].options[1],
         quiz[i].options[2],
         quiz[i].correct
-      );
-   
+        );
+        judge.textContent = "Choose the correct option"; 
+      nextbtn.remove()
+      
     }
-    nextbtn.remove()
   }
-
+  
   function next(){
     body.appendChild(nextbtn)
     nextbtn.textContent = "Next"
-   
-    judge.textContent = "Well done"; 
+    judge.textContent = "Well done!"
     nextbtn.addEventListener("click", random)
   }
-
-  function choices(question, answer, option1, option2, option3, correct) {
-    header.innerHTML = question;  
+  
+  function choices(question, answer, option1, option2, option3, correct){ 
+  header.innerHTML = question;  
     for (let i = 0; i < quiz[0].options.length; i++) {
         
       options[i].addEventListener("click", () => {
@@ -83,6 +85,7 @@ function main() {
           judge.textContent = "Correct";
           header.innerHTML = correct;
           setTimeout(() => {
+            
            next() 
           }, 1000);
         } else {
@@ -120,6 +123,3 @@ const quiz = [
 
 
  
-
-
-

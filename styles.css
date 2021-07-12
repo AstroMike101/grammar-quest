@@ -1,87 +1,114 @@
-* {
+body {
+  font-family: "Rowdies", cursive;
   margin: 0;
   padding: 0;
+  background-image: url("../assets/background.png");
+  height: 100vh;
+}
+
+.hero-heading {
+  padding-top: 20vh;
+  text-align: center;
+  font-size: 5rem;
+  color: rgb(253, 253, 253);
+}
+
+.start-btn {
+  display: flex;
+  font-size: 1.5em;
+  font-family: "Rowdies", cursive;
+  background-color: #225885;
+  border: 0;
+  padding: 1em 2em;
+  border-radius: 2em;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.2em;
+  color: white;
+}
+
+.headerDiv {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1.5em;
+
+}
+
+.musicBtn{ 
+  font-size: 1.5em;
+  font-family: "Rowdies", cursive;
+  background-color: #225885;
+  margin-top: 10px;
+  color:white;
 }
 
 
-@font-face {
-  font-family: font2;
-  src: url(assets/font2.ttf);
+.music-btn{ 
+margin: 0px 5px -5px 5px;
+height: 30px; 
 }
 
+.app {
+  height: 100%;
+  background-image: url(assets/background.png);
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+}
 
+.start-btn:hover  {
+  transform: scale(1.05, 1.05);
+  background-color: #0f3153;
+  cursor: pointer;
+}
 
-body {
-    font-family: "Rowdies", cursive;
-    background-image: url(assets/background.png); 
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-  }
-  
-  .hero-heading {
-    padding-top: 20vh;
-    text-align: center;
-    font-size: 5rem;
-    color: rgb(253, 253, 253);
-  }
+.quiz-scr{
+  text-align: center;
+  font-size: 3.5em;
+  color: #0e3c61;
+  text-shadow: rgb(233, 233, 233) 0px 0px 5px;
+  margin-top: 5vh;
+}
 
-  .startBtnDiv{
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .start-btn {
-    font-size: 1.5em;
-    font-family: "Rowdies", cursive;
-    -webkit-appearance: none;
-    background-color:#00bcd4;
-    border: 0;
-    padding: 1em 3em;
-    border-radius: 2em;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1.2em;
-    color: white;
-    box-shadow: 0 2px 25px white;
-  }
-  
-  .headerDiv {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 0.5em;
-    
- 
-  }
+.judge{
+  text-align: center;
+  margin-top: 15vh;
+  font-size: 2.7em;
+  color: rgb(207, 207, 207);
+  text-shadow: black 0px 0px 5px;
 
-  .musicOffBtn, .musicOnBtn , .rulesBtn{ 
-    font-size: 1.2em;
-    font-family: "rowdies", cursive;
-    background-color: #225885;
-    margin: 10px;
-    padding: 10px;
-    color:white;
-    box-shadow: 0 2px 25px white;
- }
+}
 
+.choices{
+  font-size: 3em;
+  display: inline-block;
+  align-self: center;
+  padding: 2vh 10vh 2vh 10vh;
+  margin: 15vh 0 5vh 28vh;
+  background-image: linear-gradient(#EFA09E, #1DACED);
+  border: none;
+}
 
+.nextBtn{
+  font-size: 2em;
+  display:  flex;
+  float: right;
+  margin-top: 35vh;
+  margin-right: 10vh;
+  border-radius: 20vh;
+  background-color: rgb(84, 189, 224);
+  padding-left: 5vh;
+  padding-right: 5vh;
+  text-align: center;
+  animation: nextBtn 0.8s;
+  border: 1px solid white
+}
 
-
-  .app {
-    height: 100%;
-    background-image: url(assets/background.png); 
-    background-repeat: none;
-    background-position: center;
-    background-size: cover;
-  }
-  
-  .start-btn:hover , .musicOffBtn:hover , .musicOnBtn:hover, .rulesBtn:hover {
-    transform: scale(1.05, 1.05);
-    background-color: #0f3153;
-    cursor:pointer;
-  }
-
-  
-
-
+@keyframes nextBtn {
+  0%   {opacity: 0%;}
+  25%  {opacity: 25%;}
+  50%  {opacity: 50%;}
+  75%  {opacity: 75%;}
+  100% {opacity: 100%;}
+}
