@@ -42,11 +42,8 @@ function main() {
 
   let scoreBoard = document.createElement('p')
   scoreBoard.classList.add('scoreBoard')
-<<<<<<< HEAD
 
-=======
-  scoreBoard.textContent = 'Score: ' + score;
->>>>>>> 24a27677399bef3677ab9ed78cb7180856eeb281
+  scoreBoard.textContent = `Score: ${score}`;
 
  //creates a div for the choice buttons 
   let choicesDiv = document.createElement('div');
@@ -115,7 +112,7 @@ function main() {
           judge.textContent = "Correct";
           header.innerHTML = correct;
           score++;
-          scoreBoard.textContent = "Score: " + score;
+          scoreBoard.textContent = `Score: ${score}`;
           setTimeout(() => {
            next() 
           }, 1000);
