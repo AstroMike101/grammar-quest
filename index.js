@@ -17,8 +17,7 @@ function musicStart(){
 }
  
 start.addEventListener("mouseover", () => {
-  btnSound.play();
-  
+  btnSound.play(); 
 });
 
 start.addEventListener("click", () => {
@@ -53,7 +52,7 @@ function main() {
   random();
   
   function random() {
-    let random = Math.ceil(Math.random() * quiz.length);
+    let random = Math.ceil(Math.random() * quiz.length - 1);
     for (let i = 0; i <= random; i++) {
       choices(
         quiz[i].question,
@@ -85,10 +84,11 @@ function main() {
           judge.textContent = "Correct";
           header.innerHTML = correct;
           setTimeout(() => {
-            
            next() 
           }, 1000);
-        } else {
+        } 
+        if(i !== answer){
+          
           judge.textContent = "wrong"; 
         }
       });
@@ -109,8 +109,8 @@ const quiz = [
   },
   {
     question: "The ___ was on the street",
-    options: ["men", "man", "mens"],
-    answer: 1,
+    options: [ "man", "men", "mens"],
+    answer: 0,
     correct: "The <u>man</u> was on the street"
   },
   {

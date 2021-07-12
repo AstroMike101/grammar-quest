@@ -91,6 +91,10 @@ body {
   border: 1px solid darkblue;
 }
 
+.choices:active{
+  transform: scale(0.95);
+}
+
 .nextBtn{
   font-size: 2em;
   display:  flex;
