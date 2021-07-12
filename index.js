@@ -23,6 +23,7 @@ start.addEventListener("mouseover", () => {
 });
 
 start.addEventListener("click", () => {
+  musicStart();
   document.querySelector(".hero-heading").remove();
   start.remove();
   main();
