@@ -3,16 +3,19 @@ let musicSound = document.querySelector("#music-sound");
 let musicBtn = document.querySelector('.musicBtn'); 
 let start = document.querySelector(".start-btn");
 let body = document.querySelector(".app");
-let isPlaying = false
+let headerDiv = document.querySelector('.headerDiv');
+let isPlaying = false;
+let score = 0;
+
 
 function musicStart(){
   if(isPlaying){
     musicSound.pause()
-    isPlaying = false
+    isPlaying = false;
   }
   else{
     musicSound.play();
-    isPlaying = true 
+    isPlaying = true;
   } 
 }
  
@@ -28,22 +31,47 @@ start.addEventListener("click", () => {
 });
 
 function main() {
-  let header = document.createElement("div");
-  let judge = document.createElement("h2");
+  let header = document.createElement("div"); //  quiz question
+  let judge = document.createElement("h2"); //says right or wrong under quiz
+  let score = 0;
   let options = Array.from({ length: 3 }, () =>
     document.createElement("button")
+    
   ); 
+//scoreboard creation, adding a class to it, and adding text
+
+  let scoreBoard = document.createElement('p')
+  scoreBoard.classList.add('scoreBoard')
+
+  scoreBoard.textContent = `Score: ${score}`;
+
+ //creates a div for the choice buttons 
+  let choicesDiv = document.createElement('div');
+  choicesDiv.classList.add('choicesDiv');
+
+
+  let nextBtnDiv = document.createElement('div');
+  nextBtnDiv.classList.add('nextBtnDiv')
+  
+
   let nextbtn = document.createElement("button") 
   
+ 
+
+  
+  headerDiv.insertBefore(scoreBoard,musicBtn);
   body.appendChild(header);
   body.appendChild(judge);
-  body.appendChild(options[0]);
-  body.appendChild(options[1]);
-  body.appendChild(options[2]);
+  body.appendChild(choicesDiv);
+  body.appendChild(nextBtnDiv);
+  choicesDiv.appendChild(options[0]);
+  choicesDiv.appendChild(options[1]);
+  choicesDiv.appendChild(options[2]);
 
   judge.classList.add("judge")
   header.classList.add("quiz-scr")
-  judge.textContent = "Choose the correct option";
+  judge.textContent = "Choose the correct option:";
+
   options[0].classList.add("choices")
   options[1].classList.add("choices")
   options[2].classList.add("choices")
@@ -69,7 +97,7 @@ function main() {
   }
   
   function next(){
-    body.appendChild(nextbtn)
+    nextBtnDiv.appendChild(nextbtn)
     nextbtn.textContent = "Next"
     judge.textContent = "Well done!"
     nextbtn.addEventListener("click", random)
@@ -83,6 +111,8 @@ function main() {
         if (i === answer) {
           judge.textContent = "Correct";
           header.innerHTML = correct;
+          score++;
+          scoreBoard.textContent = `Score: ${score}`;
           setTimeout(() => {
            next() 
           }, 1000);

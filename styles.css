@@ -36,11 +36,24 @@ body {
 
 }
 
+.scoreBoard { 
+  font-size: 2.5em;
+  justify-self: center;
+  position: relative;
+  right: 37vw;
+  
+  
+  
+}
+
 .musicBtn{ 
   font-size: 1.5em;
   font-family: "Rowdies", cursive;
   background-color: #225885;
   margin-top: 10px;
+  margin-bottom: 100px;
+
+
   color:white;
   box-shadow: 0 2px 25px white;
 }
@@ -57,57 +70,82 @@ body {
   background-repeat: none;
   background-position: center;
   background-size: cover;
+  
+  
 }
 
-.start-btn:hover , .musicBtn:hover {
+.start-btn:hover , .musicBtn:hover , .choices:hover{
   transform: scale(1.05, 1.05);
   background-color: #0f3153;
   cursor: pointer;
 }
-
+/* quiz question */
 .quiz-scr{
   text-align: center;
   font-size: 3.5em;
   color: #0e3c61;
   text-shadow: rgb(233, 233, 233) 0px 0px 5px;
-  margin-top: 5vh;
+  margin-top: 3vh;
 }
 
+/* displays if right or wrong */
 .judge{
   text-align: center;
-  margin-top: 15vh;
+  margin-top: 10vh;
   font-size: 2.7em;
   color: rgb(207, 207, 207);
   text-shadow: black 0px 0px 5px;
 }
 
+.choicesDiv {
+  display: flex; 
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  
+}
+
+
 .choices{
-  font-size: 3em;
+  font-size: 2em;
   display: inline-block;
-  align-self: center;
+  align-self:auto;
   padding: 2vh 10vh 2vh 10vh;
-  margin: 15vh 0 5vh 28vh;
+  margin: 7vh 0 5vh 28vh;
   background-image: linear-gradient(#EFA09E, #1DACED);
   border: 1px solid darkblue;
+  box-shadow: 0 2px 25px white;
+  
 }
 
 .choices:active{
   transform: scale(0.95);
 }
 
-.nextBtn{
-  font-size: 2em;
-  display:  flex;
-  float: right;
-  margin-top: 35vh;
-  margin-right: 10vh;
-  border-radius: 20vh;
-  background-color: rgb(84, 189, 224);
-  padding-left: 5vh;
-  padding-right: 5vh;
-  text-align: center;
-  animation: nextBtn 0.8s;
-  border: 1px solid white
+
+.nextBtnDiv { 
+  display:flex;
+  justify-content: center;
+}
+.nextBtn { 
+font-size: 2em;
+padding-left: 5vh;
+padding-right: 5vh;
+background-color: rgb(84, 189, 224);
+text-align:center;
+animation: nextBtn 0.8s;
+border: 1px solid white;
+border-radius: 20vh;
+margin-top: 3vh;
+margin-right: 3vh;
+border-radius: 20vh;
+
+
+
+
+
+
+
 }
 
 @keyframes nextBtn {
@@ -117,3 +155,37 @@ body {
   75%  {opacity: 75%;}
   100% {opacity: 100%;}
 }
+/* media query for iphone X to make buttons centered */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+  .choices {   
+    font-size: 2.5em;
+    margin: 20px;
+    padding: 1vh 3.5vh 1vh 3.5vh;
+    position: relative;
+    left: 2.7em;
+    top: 2em;
+   
+  
+    }
+}
+/* media query for iPhone 6+, 7+ and 8+ to make buttons centered */
+
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+.choices {
+  font-size: 2.5em;
+  margin: 20px;
+  padding: 1vh 3.5vh 1vh 3.5vh;
+  position: relative;
+  left: 3.5em;
+  
+}
+}
+
+
