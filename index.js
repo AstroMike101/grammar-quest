@@ -88,7 +88,6 @@ function main() {
           }, 1000);
         } 
         if(i !== answer){
-          
           judge.textContent = "wrong"; 
         }
       });
