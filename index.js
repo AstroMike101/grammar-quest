@@ -16,7 +16,7 @@ function musicStart(){
     musicSound.play();  
 }
 
-lives.textContent = `Lives: ${lifeCoutner}`;
+lives.innerHTML = `<img class="heart" src="./assets/heart.png"> ${lifeCoutner}`;
  
 start.addEventListener("mouseover", () => {
   btnSound.play(); 
@@ -29,7 +29,8 @@ start.addEventListener("click", () => {
   main();
 });
 
-function main() {
+function main() { 
+
   let isPlaying = true;
   let header = document.createElement("div"); //  quiz question
   let judge = document.createElement("h2"); //says right or wrong under quiz
@@ -140,7 +141,7 @@ function main() {
           judge.textContent = "wrong"; 
           
           lifeCoutner--;
-          lives.textContent = `Lives: ${lifeCoutner}`;
+          lives.innerHTML = `<img  class="heart"  src="./assets/heart.png"> ${lifeCoutner}`;
 
         }
       });

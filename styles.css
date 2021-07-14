@@ -36,11 +36,18 @@ body {
 }
 
 .lives {
+  position: relative;
   font-size: 2em;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 100px;
+  margin: 2vh 0vh 0 1vh;
+  color: #0F3153;
 }
+
+.heart{
+  position: relative;
+  width: 50px; 
+}
+
 
 .headerDiv {
   display: flex;
@@ -78,6 +85,7 @@ body {
   box-shadow: 0 2px 25px white;
   position:absolute;
 } 
+
 
 .music-btn-pic{ 
   margin: 0px 5px -5px 5px;
