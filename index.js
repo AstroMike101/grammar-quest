@@ -7,11 +7,16 @@ let headerDiv = document.querySelector('.headerDiv');
 let demo = document.querySelector("#demo")
 let isPlaying = false;
 let score = 0;
+let lives = document.querySelector('.lives')
+let lifeCoutner = 3; 
+
 
 
 function musicStart(){ 
     musicSound.play();  
 }
+
+lives.textContent = `Lives: ${lifeCoutner}`;
  
 start.addEventListener("mouseover", () => {
   btnSound.play(); 
@@ -53,10 +58,13 @@ function main() {
 
   let nextbtn = document.createElement("button") 
   
+ 
   
   
-  headerDiv.insertBefore(scoreBoard,musicBtn);
+  
+
   body.appendChild(header);
+  body.insertBefore(scoreBoard,header);
   body.appendChild(judge);
   body.appendChild(choicesDiv);
   body.appendChild(nextBtnDiv);
@@ -66,6 +74,13 @@ function main() {
   
   judge.classList.add("judge")
   header.classList.add("quiz-scr")
+  
+
+ 
+
+
+
+
   judge.textContent = "Choose the correct option:";
   
   options[0].classList.add("choices")
@@ -131,9 +146,14 @@ function main() {
           setTimeout(() => {
            next() 
           }, 1000);
+          
         } 
         if(i !== answer){
           judge.textContent = "wrong"; 
+          
+          lifeCoutner--;
+          lives.textContent = `Lives: ${lifeCoutner}`;
+
         }
       });
     }
