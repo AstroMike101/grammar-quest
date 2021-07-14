@@ -107,8 +107,7 @@ function main() {
         quiz[i].correct
         );
         judge.textContent = "Choose the correct option"; 
-      nextbtn.remove()
-      
+      nextbtn.remove() 
     }
   }
   
@@ -121,14 +120,14 @@ function main() {
   
   function choices(question, answer, option1, option2, option3, correct){ 
   header.innerHTML = question;  
-    for (let i = 0; i < quiz[0].options.length; i++) {
+    for (let i = 0; i < ; i++) {
         
       options[i].addEventListener("click", () => {
         if (i === answer) {
           judge.textContent = "Correct";
           header.innerHTML = correct;
           score += 100;
-          
+          scoreBoard.textContent = score
           setTimeout(() => {
            next() 
           }, 1000);
