@@ -56,13 +56,7 @@ function main() {
   nextBtnDiv.classList.add('nextBtnDiv')
   
 
-  let nextbtn = document.createElement("button") 
-  
- 
-  
-  
-  
-
+  let nextbtn = document.createElement("button")  
   body.appendChild(header);
   body.insertBefore(scoreBoard,header);
   body.appendChild(judge);
@@ -73,13 +67,7 @@ function main() {
   choicesDiv.appendChild(options[2]);
   
   judge.classList.add("judge")
-  header.classList.add("quiz-scr")
-  
-
- 
-
-
-
+  header.classList.add("quiz-scr") 
 
   judge.textContent = "Choose the correct option:";
   
@@ -122,8 +110,7 @@ function main() {
         quiz[i].correct
         );
         judge.textContent = "Choose the correct option"; 
-      nextbtn.remove()
-      
+      nextbtn.remove() 
     }
   }
   
@@ -136,14 +123,14 @@ function main() {
   
   function choices(question, answer, option1, option2, option3, correct){ 
   header.innerHTML = question;  
-    for (let i = 0; i < quiz[0].options.length; i++) {
+    for (let i = 0; i < quiz.length; i++) {
         
       options[i].addEventListener("click", () => {
         if (i === answer) {
           judge.textContent = "Correct";
           header.innerHTML = correct;
           score += 100;
-          
+          scoreBoard.textContent = `Score: ${score}`;
           setTimeout(() => {
            next() 
           }, 1000);
