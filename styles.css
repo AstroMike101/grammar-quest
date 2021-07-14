@@ -1,8 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "Rowdies", cursive;
   margin: 0;
   padding: 0;
   background-image: url("../assets/background.png");
+  object-fit: cover;
   height: 100vh;
 }
 
@@ -73,6 +79,7 @@ body {
   padding: 1vh; 
   color:white;
   box-shadow: 0 2px 25px white;
+  position:absolute;
 } 
 
 .music-btn-pic{ 
@@ -82,7 +89,7 @@ body {
 
 .app {
   height: 100%;
-  background-image: url(assets/background.png);
+  background-image: url("../assets/background.png");
   background-repeat: none;
   background-position: center;
   background-size: cover;
@@ -142,10 +149,11 @@ body {
 
 .nextBtnDiv { 
   display:flex;
-  justify-content: right;
+  justify-content: center;
 }
 .nextBtn { 
-  position: relative;
+position: relative;
+left: 40px;
 font-size: 2em;
 padding-left: 5vh;
 padding-right: 5vh;

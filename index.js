@@ -89,7 +89,7 @@ function main() {
   nextbtn.classList.add("nextBtn")
   
   //appending the main musicBtn
-  body.appendChild(musicBtnMain)
+  choicesDiv.appendChild(musicBtnMain)
   musicBtnMain.innerHTML = "<img class=\"music-btn-pic\" src=\"./assets/sound.png\"></img>"
   musicBtnMain.classList.add("musicBtnmain")
 
