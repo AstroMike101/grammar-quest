@@ -4,19 +4,13 @@ let musicBtn = document.querySelector('.musicBtn');
 let start = document.querySelector(".start-btn");
 let body = document.querySelector(".app");
 let headerDiv = document.querySelector('.headerDiv');
+let demo = document.querySelector("#demo")
 let isPlaying = false;
 let score = 0;
 
 
-function musicStart(){
-  if(isPlaying){
-    musicSound.pause()
-    isPlaying = false;
-  }
-  else{
-    musicSound.play();
-    isPlaying = true;
-  } 
+function musicStart(){ 
+    musicSound.play();  
 }
  
 start.addEventListener("mouseover", () => {
@@ -31,19 +25,22 @@ start.addEventListener("click", () => {
 });
 
 function main() {
+  let isPlaying = true;
   let header = document.createElement("div"); //  quiz question
   let judge = document.createElement("h2"); //says right or wrong under quiz
-  let score = 0;
+  // let score = 0;
   let options = Array.from({ length: 3 }, () =>
     document.createElement("button")
     
-  ); 
-//scoreboard creation, adding a class to it, and adding text
+  );  
+  //initialize new music button at bottom left
+  let musicBtnMain = document.createElement("button")
 
+//scoreboard creation, adding a class to it, and adding text
   let scoreBoard = document.createElement('p')
   scoreBoard.classList.add('scoreBoard')
 
-  scoreBoard.textContent = `Score: ${score}`;
+  // scoreBoard.textContent = `Score: ${score}`;
 
  //creates a div for the choice buttons 
   let choicesDiv = document.createElement('div');
@@ -56,8 +53,7 @@ function main() {
 
   let nextbtn = document.createElement("button") 
   
- 
-
+  
   
   headerDiv.insertBefore(scoreBoard,musicBtn);
   body.appendChild(header);
@@ -67,15 +63,35 @@ function main() {
   choicesDiv.appendChild(options[0]);
   choicesDiv.appendChild(options[1]);
   choicesDiv.appendChild(options[2]);
-
+  
   judge.classList.add("judge")
   header.classList.add("quiz-scr")
   judge.textContent = "Choose the correct option:";
-
+  
   options[0].classList.add("choices")
   options[1].classList.add("choices")
   options[2].classList.add("choices")
   nextbtn.classList.add("nextBtn")
+  
+  //appending the main musicBtn
+  body.appendChild(musicBtnMain)
+  musicBtnMain.innerHTML = "<img class=\"music-btn-pic\" src=\"./assets/sound.png\"></img>"
+  musicBtnMain.classList.add("musicBtnmain")
+
+  musicBtnMain.addEventListener("click", () => {
+    if(isPlaying){
+      musicSound.pause()
+      isPlaying = false;
+    }
+    else{
+      musicSound.play();
+      isPlaying = true;
+    } 
+  })
+  //removing old button
+  musicBtn.remove();
+
+  scoreBoard.textContent = `Score: ${score}`;
 
   random();
   
@@ -98,7 +114,7 @@ function main() {
   
   function next(){
     nextBtnDiv.appendChild(nextbtn)
-    nextbtn.textContent = "Next"
+    nextbtn.textContent = "Next ->"
     judge.textContent = "Well done!"
     nextbtn.addEventListener("click", random)
   }
@@ -111,8 +127,8 @@ function main() {
         if (i === answer) {
           judge.textContent = "Correct";
           header.innerHTML = correct;
-          score++;
-          scoreBoard.textContent = `Score: ${score}`;
+          score += 100;
+          
           setTimeout(() => {
            next() 
           }, 1000);
