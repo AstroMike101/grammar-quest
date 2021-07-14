@@ -59,7 +59,7 @@ function main() {
 
   let nextbtn = document.createElement("button")  
   body.appendChild(header);
-  body.insertBefore(scoreBoard,header);
+  headerDiv.appendChild(scoreBoard);
   body.appendChild(judge);
   body.appendChild(choicesDiv);
   body.appendChild(nextBtnDiv);
