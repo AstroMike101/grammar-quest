@@ -7,7 +7,7 @@ body {
 }
 
 .hero-heading {
-  padding-top: 20vh;
+  padding-top: 10vh;
   text-align: center;
   font-size: 5rem;
   color: rgb(253, 253, 253);
@@ -51,6 +51,8 @@ body {
 
   
   
+  position: relative; 
+  margin: 3vh 2vh 0vh 1vh;
 }
 
 .musicBtn{ 
@@ -58,13 +60,20 @@ body {
   font-family: "Rowdies", cursive;
   background-color: #225885;
   margin-top: 10px;
-  margin-bottom: 100px;
-
-
+  margin-bottom: 100px; 
   color:white;
   box-shadow: 0 2px 25px white;
 }
 
+ .musicBtnmain{  
+  background-color: #53a1e0;
+  margin: 20vh 0 0 2vh;
+  /* margin-bottom: 100px; */
+  border-radius: 50vh;
+  padding: 1vh; 
+  color:white;
+  box-shadow: 0 2px 25px white;
+} 
 
 .music-btn-pic{ 
   margin: 0px 5px -5px 5px;
@@ -92,7 +101,7 @@ body {
   font-size: 3.5em;
   color: #0e3c61;
   text-shadow: rgb(233, 233, 233) 0px 0px 5px;
-  margin-top: 3vh;
+  margin-top: 5vh;
 }
 
 /* displays if right or wrong */
@@ -118,23 +127,25 @@ body {
   display: inline-block;
   align-self:auto;
   padding: 2vh 10vh 2vh 10vh;
-  margin: 7vh 0 5vh 28vh;
+  margin: auto;
+  margin-top: 10vh;
+  width: 20%;
   background-image: linear-gradient(#EFA09E, #1DACED);
-  border: 1px solid darkblue;
-  box-shadow: 0 2px 25px white;
+  border: 1px solid rgb(31, 89, 165); 
   
 }
 
 .choices:active{
-  transform: scale(0.95);
+  transform: scale(1);
 }
 
 
 .nextBtnDiv { 
   display:flex;
-  justify-content: center;
+  justify-content: right;
 }
 .nextBtn { 
+  position: relative;
 font-size: 2em;
 padding-left: 5vh;
 padding-right: 5vh;
@@ -154,6 +165,10 @@ cursor: pointer;
 
 
 
+margin-top: 10vh;
+margin-bottom: -17vh;
+margin-right: 10vh;
+border-radius: 20vh;   
 }
 
 @keyframes nextBtn {
