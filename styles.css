@@ -4,24 +4,24 @@
 }
 
 body {
-  font-family: "Rowdies", cursive;
-  margin: 0;
-  padding: 0;
-  background-image: url("../assets/background.png");
+  font-family: "Rowdies", cursive; 
+  background-image: url("./assets/bg.jpg");
   object-fit: cover;
+  background-size: 100%;
   height: 100vh;
+  background-repeat: none;
 }
 
 .hero-heading {
-  padding-top: 10vh;
+  padding-top: 20vh;
   text-align: center;
-  font-size: 5rem;
+  font-size: 8rem;
   color: rgb(253, 253, 253); 
 }
 
 .start-btn {
   display: flex;
-  font-size: 1.5em;
+  font-size: 2em;
   font-family: "Rowdies", cursive;
   background-color: #225885;
   border: 0;
@@ -67,17 +67,17 @@ body {
 
 .musicBtn{ 
   font-size: 1.5em;
+  padding: 1vh;
   font-family: "Rowdies", cursive;
   background-color: #225885;
   margin-top: 10px;
   margin-bottom: 100px; 
   color:white;
-  box-shadow: 0 2px 25px white;
+  box-shadow: 0 2px 25px #87D2E0;
 }
 
  .musicBtnmain{  
   background-color: #53a1e0;
-  margin: 15vh 0 0 2vh;
   /* margin-bottom: 100px; */
   border-radius: 50vh;
   padding: 1vh; 
@@ -86,6 +86,7 @@ body {
   position:absolute;
   bottom: 0;
   left: 0;
+  margin: 25vh 0 5vh 2vh;
 } 
 
 
@@ -112,17 +113,17 @@ body {
 /* quiz question */
 .quiz-scr{
   text-align: center;
-  font-size: 3.5em;
+  font-size: 5em;
   color: #0e3c61;
   text-shadow: rgb(233, 233, 233) 0px 0px 5px;
-  margin-top:10vh;
+  margin-top: 15vh;
 }
 
 /* displays if right or wrong */
 .judge{
   text-align: center;
   margin-top: 10vh;
-  font-size: 2.7em;
+  font-size: 3em;
   color: rgb(207, 207, 207);
   text-shadow: black 0px 0px 5px;
 }
@@ -137,7 +138,7 @@ body {
 
 
 .choices{
-  font-size: 2em;
+  font-size: 3em;
   display: inline-block;
   align-self:auto;
   padding: 2vh 10vh 2vh 10vh;
@@ -156,23 +157,17 @@ body {
 
 .nextBtnDiv { 
   display:flex;
-  justify-content: center;
+  justify-content: right;
 }
 .nextBtn { 
 position: relative;
-left: 40px;
 font-size: 2em;
-padding-left: 5vh;
-padding-right: 5vh;
-background-color: rgb(84, 189, 224);
-text-align:center;
-animation: nextBtn 0.8s;
-border: 1px solid white;
-border-radius: 20vh;
+padding: 1vh 5vh 1vh 5vh;
+background-color: rgb(84, 189, 224); 
+animation: nextBtn 0.5s;
+border: 1px solid white; 
 cursor: pointer; 
-margin-top: 10vh;
-margin-bottom: -15vh;
-margin-right: 10vh;
+margin: 10vh 5vh;
 border-radius: 20vh;   
 }
 
@@ -191,13 +186,58 @@ border-radius: 20vh;
   .choices {   
     font-size: 2.5em;
     margin: 20px;
-    padding: 1vh 3.5vh 1vh 3.5vh;
+    padding: 1vh;
     position: relative;
     left: 2.7em;
-    top: 2em;
-   
-  
+    top: 2em; 
     }
+    .quiz-scr{
+      text-align: center;
+      font-size: 4em;
+      color: #0e3c61;
+      text-shadow: rgb(233, 233, 233) 0px 0px 5px;
+      margin-top: 25vh;
+    }
+    
+.nextBtnDiv { 
+  display:flex;
+  justify-content: right;
+}
+    .nextBtn { 
+      position: relative;
+      font-size: 2em;
+      padding-left: 3vh;
+      padding-right: 3vh;
+      background-color: rgb(84, 189, 224); 
+      animation: nextBtn 0.5s;
+      border: 1px solid white; 
+      cursor: pointer; 
+      margin: 7vh 5vh 0 0;
+      /* border-radius: 5vh;    */
+      }
+      .heart{
+        position: relative;
+        width: 100px; 
+      }
+      
+.scoreBoard { 
+  font-size: 4em;
+  justify-self: right;
+  text-align: right;
+  margin: 0; 
+  position: relative; 
+  color:rgb(21, 65, 131)
+  
+}
+
+.lives {
+  position: relative;
+  font-size: 5em;
+  text-align: center;
+  margin: 0vh 0vh 0 1vh;
+  color: #0F3153;
+}
+    
 }
 /* media query for iPhone 6+, 7+ and 8+ to make buttons centered */
 
