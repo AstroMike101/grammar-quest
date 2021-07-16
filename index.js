@@ -16,7 +16,7 @@ function musicStart(){
     musicSound.play();  
 }
 
-lives.innerHTML = `<img class="heart" src="./images/heart.png"> ${lifeCoutner}`;
+lives.innerHTML = `<img class="heart" src="./images/Heart.png"> ${lifeCoutner}`;
  
 start.addEventListener("mouseover", () => {
   btnSound.play(); 
@@ -141,7 +141,7 @@ function main() {
           judge.textContent = "wrong"; 
           
           lifeCoutner--;
-          lives.innerHTML = `<img  class="heart"  src="./images/heart.png"> ${lifeCoutner}`;
+          lives.innerHTML = `<img  class="heart"  src="./images/Heart.png"> ${lifeCoutner}`;
 
         }
       });
