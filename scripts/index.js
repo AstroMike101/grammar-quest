@@ -80,6 +80,8 @@ function main() {
   //appending the main musicBtn
   choicesDiv.appendChild(musicBtnMain)
   musicBtnMain.innerHTML = "<img class=\"music-btn-pic\" src=\"../images/sound.png\"></img>"
+  nextBtnDiv.appendChild(musicBtnMain)
+  musicBtnMain.innerHTML = "<img class=\"music-btn-pic\" src=\"./images/sound.png\"></img>"
   musicBtnMain.classList.add("musicBtnmain")
 
   musicBtnMain.addEventListener("click", () => {

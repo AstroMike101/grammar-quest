@@ -79,14 +79,14 @@ body {
  .musicBtnmain{  
   background-color: #53a1e0;
   /* margin-bottom: 100px; */
-  border-radius: 50vh;
+  border-radius: 40vh;
   padding: 1vh; 
   color:white;
   box-shadow: 0 2px 25px white;
   position:absolute;
   bottom: 0;
   left: 0;
-  margin: 25vh 0 5vh 2vh;
+  margin: 25vh 0 1vh 2vh;
 } 
 
 
@@ -157,18 +157,19 @@ body {
 
 .nextBtnDiv { 
   display:flex;
-  justify-content: right;
+  justify-content: center;
 }
 .nextBtn { 
 position: relative;
 font-size: 2em;
-padding: 1vh 5vh 1vh 5vh;
+padding: 1vh 5vh 0vh 5vh;
 background-color: rgb(84, 189, 224); 
 animation: nextBtn 0.5s;
 border: 1px solid white; 
 cursor: pointer; 
-margin: 10vh 5vh;
+margin-top: 6 vh;
 border-radius: 20vh;   
+
 }
 
 @keyframes nextBtn {
