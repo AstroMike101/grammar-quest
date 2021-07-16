@@ -16,7 +16,7 @@ function musicStart(){
     musicSound.play();  
 }
 
-lives.innerHTML = `<img class="heart" src="./images/Heart.png"> ${lifeCoutner}`;
+lives.innerHTML = `<img class="heart" src="../images/Heart.png"> ${lifeCoutner}`;
  
 start.addEventListener("mouseover", () => {
   btnSound.play(); 
@@ -79,7 +79,7 @@ function main() {
   
   //appending the main musicBtn
   choicesDiv.appendChild(musicBtnMain)
-  musicBtnMain.innerHTML = "<img class=\"music-btn-pic\" src=\"./images/sound.png\"></img>"
+  musicBtnMain.innerHTML = "<img class=\"music-btn-pic\" src=\"../images/sound.png\"></img>"
   musicBtnMain.classList.add("musicBtnmain")
 
   musicBtnMain.addEventListener("click", () => {
@@ -141,7 +141,7 @@ function main() {
           judge.textContent = "wrong"; 
           
           lifeCoutner--;
-          lives.innerHTML = `<img  class="heart"  src="./images/Heart.png"> ${lifeCoutner}`;
+          lives.innerHTML = `<img  class="heart"  src="../images/Heart.png"> ${lifeCoutner}`;
 
         }
       });
