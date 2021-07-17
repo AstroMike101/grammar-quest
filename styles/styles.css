@@ -10,9 +10,9 @@ body {
 }
 
 .hero-heading {
-  padding-top: 5vh;
+  padding-top: 10vh;
   text-align: center;
-  font-size: 8rem;
+  font-size: 6rem;
   color: rgb(253, 253, 253); 
 }
 
@@ -22,12 +22,12 @@ body {
   font-family: "Rowdies", cursive;
   background-color: #225885;
   border: 0;
-  padding: 1em 2em;
+  padding: 0.6em 1.5em;
   border-radius: 2em;
   margin: auto;
   justify-content: center;
   align-items: center;
-  margin-top: 1.2em;
+  margin-top: 1.4em;
   color: white;
   box-shadow: 0 2px 25px white;
 }
@@ -54,7 +54,10 @@ body {
 }
 
 .scoreBoard { 
-  font-size: 2.5em;
+  font-size: 3em;
+  background-color: #0e3c61;
+  color: white;
+  padding: 0 2vh;
   justify-self: right;
   text-align: right;
   margin: 0; 
@@ -100,7 +103,7 @@ body {
 /* quiz question */
 .quiz-scr{
   text-align: center;
-  font-size: 5em;
+  font-size: 4em;
   color: #0e3c61;
   text-shadow: rgb(233, 233, 233) 0px 0px 5px;
   margin-top: 15vh;
@@ -110,7 +113,7 @@ body {
 .judge{
   text-align: center;
   margin-top: 10vh;
-  font-size: 3em;
+  font-size: 2.5em;
   color: rgb(207, 207, 207);
   text-shadow: black 0px 0px 5px;
 }
@@ -125,10 +128,10 @@ body {
 
 
 .choices{
-  font-size: 3em;
+  font-size: 2.5em;
   display: inline-block;
   align-self:auto;
-  padding: 2vh 10vh 2vh 10vh;
+  padding: 2vh 10vh;
   margin: auto;
   margin-top: 10vh;
   width: 20%;
