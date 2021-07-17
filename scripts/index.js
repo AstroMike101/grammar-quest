@@ -104,14 +104,7 @@ function main() {
   function random() {
     let random = Math.ceil(Math.random() * quiz.length - 1);
     for (let i = 0; i <= random; i++) {
-      choices(
-        quiz[i].question,
-        quiz[i].answer,
-        quiz[i].options[0],
-        quiz[i].options[1],
-        quiz[i].options[2],
-        quiz[i].correct
-        );
+      choices();
         judge.textContent = "Choose the correct option"; 
       nextbtn.remove() 
     }
@@ -124,34 +117,35 @@ function main() {
     nextbtn.addEventListener("click", random)
   }
   
-  function choices(question, answer, option1, option2, option3, correct){ 
-  header.innerHTML = question;  
-    for (let i = 0; i < quiz.length; i++) {
-        
-      options[i].addEventListener("click", () => {
-        if (i === answer) {
-          judge.textContent = "Correct";
-          header.innerHTML = correct;
-          score += 100;
-          scoreBoard.textContent = `Score: ${score}`;
-          setTimeout(() => {
-           next() 
-          }, 1000);
-          
-        } 
-        if(i !== answer){
-          judge.textContent = "wrong"; 
-          
-          lifeCoutner--;
-          lives.innerHTML = `<img  class="heart"  src="../images/Heart.png"> ${lifeCoutner}`;
+  function choices(){ 
+    for(let e = 0; e <= Math.ceil(Math.random() * quiz.length - 1); e++){
+    header.innerHTML = quiz[e].question;  
+    //   for (let i = 0; i < e; i++) {
+    //   quiz[e].options[i].addEventListener("click", () => {
+    //     if (i === quiz[e].answer[i]) {
+    //       judge.textContent = "Correct";
+    //       header.innerHTML = quiz[i].correct;
+    //       score += 100;
+    //       scoreBoard.textContent = `Score: ${score}`;
+    //       setTimeout(() => {
+    //        next() 
+    //       }, 1000);
+    //     }
+    //     if(i !== answer){
+    //       judge.textContent = "wrong"; 
+    //       lifeCoutner--;
+    //       lives.innerHTML = `<img  class="heart"  src="../images/Heart.png"> ${lifeCoutner}`;
+    //     }
+    //   });
+    // }
+    
 
-        }
-      });
+    options[0].textContent = quiz[e].options[0]; 
+    options[1].textContent = quiz[e].options[1]; 
+    options[2].textContent = quiz[e].options[2]; 
+    
     }
-
-    options[0].textContent = option1;
-    options[1].textContent = option2;
-    options[2].textContent = option3;
+  
   }
 }
 
@@ -169,7 +163,7 @@ const quiz = [
     correct: "The <u>man</u> was on the street"
   },
   {
-    question: "The _____ toy was stolen",
+    question: "The ___ toy was stolen",
     options: ["kids", "kid", "kid's"],
     answer: 2,
     correct: "The <u>kid's</u> toy was stolen"
