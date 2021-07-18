@@ -116,6 +116,8 @@ function main() {
     judge.textContent = "Well done!"
     nextbtn.addEventListener("click", random)
   }
+
+  
   
   function choices(){ 
     for(let e = 0; e <= Math.ceil(Math.random() * quiz.length - 1); e++){
@@ -138,12 +140,12 @@ function main() {
     //     }
     //   });
     // }
-    
 
     options[0].textContent = quiz[e].options[0]; 
     options[1].textContent = quiz[e].options[1]; 
     options[2].textContent = quiz[e].options[2]; 
-    
+ 
+
     }
   
   }
