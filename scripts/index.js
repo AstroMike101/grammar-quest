@@ -152,6 +152,7 @@ function main() {
     options[0].textContent = option1;
     options[1].textContent = option2;
     options[2].textContent = option3;
+    
   }
 }
 
@@ -173,7 +174,15 @@ const quiz = [
     options: ["kids", "kid", "kid's"],
     answer: 2,
     correct: "The <u>kid's</u> toy was stolen"
-  }
+  },
+
+ 
+
+
+ 
+
+
+
 ];
 
 
