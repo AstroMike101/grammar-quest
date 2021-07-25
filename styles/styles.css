@@ -13,9 +13,19 @@ body {
   padding-top: 10vh;
   text-align: center;
   font-size: 6rem;
-  color: rgb(253, 253, 253); 
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 1.4s ease-in-out infinite alternate;
 }
 
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #63CADD, 0 0 40px #63CADD, 0 0 50px #63CADD, 0 0 60px #63CADD, 0 0 70px #63CADD;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #096F9B, 0 0 40px #096F9B, 0 0 50px #096F9B, 0 0 60px #096F9B, 0 0 70px #096F9B, 0 0 80px #096F9B;
+  }
+}
 .start-btn {
   display: flex;
   font-size: 2em;
@@ -41,8 +51,13 @@ body {
 }
 
 .heart{
-  position: relative;
+  position: initial;
   width: 50px; 
+  padding-top: 5px;
+}
+
+.lifeCounter{ 
+  color: white;
 }
 
 
@@ -137,11 +152,7 @@ body {
   border: 1px solid rgb(31, 89, 165); 
   
 }
-
-.choices:active{
-  transform: scale(1);
-}
-
+ 
 
 .nextBtnDiv { 
   display:flex;
