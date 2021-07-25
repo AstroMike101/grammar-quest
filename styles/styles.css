@@ -16,6 +16,7 @@ body {
   -webkit-animation: glow 2s ease-in-out infinite alternate;
   -moz-animation: glow 2s ease-in-out infinite alternate;
   animation: glow 1.4s ease-in-out infinite alternate;
+  
 }
 
 @-webkit-keyframes glow {
