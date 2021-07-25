@@ -1,34 +1,43 @@
 body {
   font-family: "Rowdies", cursive; 
+}
+
+.app{
   background-image: url("../images/bg.jpg");
-  object-fit: cover;
-  background-size: 100%;
-  background-position: center;
   background-size: cover;
   height: 100vh;
-  background-repeat: none;
-  
+  background-repeat: no-repeat;
 }
 
 .hero-heading {
-  padding-top: 5vh;
+  padding-top: 10vh;
   text-align: center;
-  font-size: 8rem;
-  color: rgb(253, 253, 253); 
+  font-size: 6rem;
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 1.4s ease-in-out infinite alternate;
 }
 
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #63CADD, 0 0 40px #63CADD, 0 0 50px #63CADD, 0 0 60px #63CADD, 0 0 70px #63CADD;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #096F9B, 0 0 40px #096F9B, 0 0 50px #096F9B, 0 0 60px #096F9B, 0 0 70px #096F9B, 0 0 80px #096F9B;
+  }
+}
 .start-btn {
   display: flex;
   font-size: 2em;
   font-family: "Rowdies", cursive;
   background-color: #225885;
   border: 0;
-  padding: 1em 2em;
+  padding: 0.6em 1.5em;
   border-radius: 2em;
   margin: auto;
   justify-content: center;
   align-items: center;
-  margin-top: 1.2em;
+  margin-top: 1.4em;
   color: white;
   box-shadow: 0 2px 25px white;
 }
@@ -42,8 +51,13 @@ body {
 }
 
 .heart{
-  position: relative;
+  position: initial;
   width: 50px; 
+  padding-top: 5px;
+}
+
+.lifeCounter{ 
+  color: white;
 }
 
 
@@ -55,7 +69,10 @@ body {
 }
 
 .scoreBoard { 
-  font-size: 2.5em;
+  font-size: 3em;
+  background-color: #0e3c61;
+  color: white;
+  padding: 0 2vh;
   justify-self: right;
   text-align: right;
   margin: 0; 
@@ -93,17 +110,6 @@ body {
   height: 30px; 
   }
 
-.app {
-  height: 100%;
-  background-image: url("../images/background.png");
-  background-repeat: none;
-  background-position: center;
-  background-size: cover;
-
-  
-  
-}
-
 .start-btn:hover , .musicBtn:hover , .choices:hover{
   transform: scale(1.05, 1.05);
   background-color: #0f3153;
@@ -112,7 +118,7 @@ body {
 /* quiz question */
 .quiz-scr{
   text-align: center;
-  font-size: 5em;
+  font-size: 4em;
   color: #0e3c61;
   text-shadow: rgb(233, 233, 233) 0px 0px 5px;
   margin-top: 15vh;
@@ -122,7 +128,7 @@ body {
 .judge{
   text-align: center;
   margin-top: 10vh;
-  font-size: 3em;
+  font-size: 2.5em;
   color: rgb(207, 207, 207);
   text-shadow: black 0px 0px 5px;
 }
@@ -131,16 +137,14 @@ body {
   display: flex; 
   flex-direction: row;
   justify-content: flex-start;
-  flex-wrap: wrap;
-  
+  flex-wrap: wrap; 
 }
 
-
 .choices{
-  font-size: 3em;
+  font-size: 2.5em;
   display: inline-block;
   align-self:auto;
-  padding: 2vh 10vh 2vh 10vh;
+  padding: 2vh 10vh;
   margin: auto;
   margin-top: 10vh;
   width: 20%;
@@ -148,11 +152,7 @@ body {
   border: 1px solid rgb(31, 89, 165); 
   
 }
-
-.choices:active{
-  transform: scale(1);
-}
-
+ 
 
 .nextBtnDiv { 
   display:flex;

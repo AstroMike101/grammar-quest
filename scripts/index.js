@@ -5,18 +5,12 @@ let start = document.querySelector(".start-btn");
 let body = document.querySelector(".app");
 let headerDiv = document.querySelector('.headerDiv');
 let demo = document.querySelector("#demo")
-let isPlaying = false;
-let score = 0;
-let lives = document.querySelector('.lives')
-let lifeCoutner = 3; 
-
-
+let isPlaying = false; 
 
 function musicStart(){ 
     musicSound.play();  
 }
 
-lives.innerHTML = `<img class="heart" src="../images/Heart.png"> ${lifeCoutner}`;
  
 start.addEventListener("mouseover", () => {
   btnSound.play(); 
@@ -33,8 +27,7 @@ function main() {
 
   let isPlaying = true;
   let header = document.createElement("div"); //  quiz question
-  let judge = document.createElement("h2"); //says right or wrong under quiz
-  // let score = 0;
+  let judge = document.createElement("h2"); //says right or wrong under quiz 
   let options = Array.from({ length: 3 }, () =>
     document.createElement("button")
     
@@ -83,7 +76,7 @@ function main() {
   nextBtnDiv.appendChild(musicBtnMain)
   musicBtnMain.innerHTML = "<img class=\"music-btn-pic\" src=\"./images/sound.png\"></img>"
   musicBtnMain.classList.add("musicBtnmain")
-
+  
   musicBtnMain.addEventListener("click", () => {
     if(isPlaying){
       musicSound.pause()
@@ -96,8 +89,9 @@ function main() {
   })
   //removing old button
   musicBtn.remove();
-
+  let score = 0
   scoreBoard.textContent = `Score: ${score}`;
+  // scoreBoard.textContent = `Score: ${score}`;
 
   random();
   
@@ -133,7 +127,6 @@ function main() {
           judge.textContent = "Correct";
           header.innerHTML = correct;
           score += 100;
-          scoreBoard.textContent = `Score: ${score}`;
           setTimeout(() => {
            next() 
           }, 1000);
@@ -142,13 +135,10 @@ function main() {
         if(i !== answer){
           judge.textContent = "wrong"; 
           
-          lifeCoutner--;
-          lives.innerHTML = `<img  class="heart"  src="../images/Heart.png"> ${lifeCoutner}`;
-
         }
-      });
+      }, {once: true});
     }
-
+    
     options[0].textContent = option1;
     options[1].textContent = option2;
     options[2].textContent = option3;
@@ -174,16 +164,5 @@ const quiz = [
     options: ["kids", "kid", "kid's"],
     answer: 2,
     correct: "The <u>kid's</u> toy was stolen"
-  },
-
- 
-
-
- 
-
-
-
+  }
 ];
-
-
- 
