@@ -5,18 +5,12 @@ let start = document.querySelector(".start-btn");
 let body = document.querySelector(".app");
 let headerDiv = document.querySelector('.headerDiv');
 let demo = document.querySelector("#demo")
-let isPlaying = false;
-let score = 0;
-let lives = document.querySelector('.lives')
-let lifeCoutner = 3; 
-
-
+let isPlaying = false; 
 
 function musicStart(){ 
     musicSound.play();  
 }
 
-lives.innerHTML = `<img class="heart" src="../images/Heart.png"> ${lifeCoutner}`;
  
 start.addEventListener("mouseover", () => {
   btnSound.play(); 
@@ -33,8 +27,7 @@ function main() {
 
   let isPlaying = true;
   let header = document.createElement("div"); //  quiz question
-  let judge = document.createElement("h2"); //says right or wrong under quiz
-  // let score = 0;
+  let judge = document.createElement("h2"); //says right or wrong under quiz 
   let options = Array.from({ length: 3 }, () =>
     document.createElement("button")
     
@@ -83,7 +76,7 @@ function main() {
   nextBtnDiv.appendChild(musicBtnMain)
   musicBtnMain.innerHTML = "<img class=\"music-btn-pic\" src=\"./images/sound.png\"></img>"
   musicBtnMain.classList.add("musicBtnmain")
-
+  
   musicBtnMain.addEventListener("click", () => {
     if(isPlaying){
       musicSound.pause()
@@ -96,15 +89,23 @@ function main() {
   })
   //removing old button
   musicBtn.remove();
-
+  let score = 0
   scoreBoard.textContent = `Score: ${score}`;
+  // scoreBoard.textContent = `Score: ${score}`;
 
   random();
   
   function random() {
     let random = Math.ceil(Math.random() * quiz.length - 1);
     for (let i = 0; i <= random; i++) {
-      choices();
+      choices(
+        quiz[i].question,
+        quiz[i].answer,
+        quiz[i].options[0],
+        quiz[i].options[1],
+        quiz[i].options[2],
+        quiz[i].correct
+        );
         judge.textContent = "Choose the correct option"; 
       nextbtn.remove() 
     }
@@ -116,38 +117,31 @@ function main() {
     judge.textContent = "Well done!"
     nextbtn.addEventListener("click", random)
   }
-
   
-  
-  function choices(){ 
-    for(let e = 0; e <= Math.ceil(Math.random() * quiz.length - 1); e++){
-    header.innerHTML = quiz[e].question;  
-    //   for (let i = 0; i < e; i++) {
-    //   quiz[e].options[i].addEventListener("click", () => {
-    //     if (i === quiz[e].answer[i]) {
-    //       judge.textContent = "Correct";
-    //       header.innerHTML = quiz[i].correct;
-    //       score += 100;
-    //       scoreBoard.textContent = `Score: ${score}`;
-    //       setTimeout(() => {
-    //        next() 
-    //       }, 1000);
-    //     }
-    //     if(i !== answer){
-    //       judge.textContent = "wrong"; 
-    //       lifeCoutner--;
-    //       lives.innerHTML = `<img  class="heart"  src="../images/Heart.png"> ${lifeCoutner}`;
-    //     }
-    //   });
-    // }
-
-    options[0].textContent = quiz[e].options[0]; 
-    options[1].textContent = quiz[e].options[1]; 
-    options[2].textContent = quiz[e].options[2]; 
- 
-
+  function choices(question, answer, option1, option2, option3, correct){ 
+  header.innerHTML = question;  
+    for (let i = 0; i < quiz.length; i++) {
+        
+      options[i].addEventListener("click", () => {
+        if (i === answer) {
+          judge.textContent = "Correct";
+          header.innerHTML = correct;
+          score += 100;
+          setTimeout(() => {
+           next() 
+          }, 1000);
+          
+        } 
+        if(i !== answer){
+          judge.textContent = "wrong"; 
+          
+        }
+      }, {once: true});
     }
-  
+    
+    options[0].textContent = option1;
+    options[1].textContent = option2;
+    options[2].textContent = option3;
   }
 }
 
@@ -165,12 +159,9 @@ const quiz = [
     correct: "The <u>man</u> was on the street"
   },
   {
-    question: "The ___ toy was stolen",
+    question: "The _____ toy was stolen",
     options: ["kids", "kid", "kid's"],
     answer: 2,
     correct: "The <u>kid's</u> toy was stolen"
   }
 ];
-
-
- 
