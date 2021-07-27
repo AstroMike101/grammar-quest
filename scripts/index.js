@@ -124,9 +124,14 @@ function main() {
         
       options[i].addEventListener("click", () => {
         if (i === answer) {
+          let scoreText = document.querySelector('.scoreBoard');
+
           judge.textContent = "Correct";
           header.innerHTML = correct;
           score += 100;
+
+          scoreText.innerHTML = `Score: ${score}`;
+
           setTimeout(() => {
            next() 
           }, 1000);
