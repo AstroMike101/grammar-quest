@@ -38,9 +38,6 @@ function main() {
 //scoreboard creation, adding a class to it, and adding text
   let scoreBoard = document.createElement('p')
   scoreBoard.classList.add('scoreBoard')
-  let score = 0;
-  scoreBoard.textContent = `Score: ${score}`;
-
 
   // scoreBoard.textContent = `Score: ${score}`;
 
@@ -92,6 +89,9 @@ function main() {
   })
   //removing old button
   musicBtn.remove();
+  let score = 0
+  scoreBoard.textContent = `Score: ${score}`;
+  // scoreBoard.textContent = `Score: ${score}`;
 
   random();
   
@@ -100,11 +100,11 @@ function main() {
     for (let i = 0; i <= random; i++) {
       choices(
         quiz[i].question,
-        quiz[random].answer,
+        quiz[i].answer,
         quiz[i].options[0],
         quiz[i].options[1],
         quiz[i].options[2],
-        quiz[i].correct,
+        quiz[i].correct
         );
         judge.textContent = "Choose the correct option"; 
       nextbtn.remove() 
@@ -119,13 +119,16 @@ function main() {
   }
   
   function choices(question, answer, option1, option2, option3, correct){ 
-  header.innerHTML = question; 
+  header.innerHTML = question;  
     for (let i = 0; i < quiz.length; i++) {
+        
       options[i].addEventListener("click", () => {
         if (i === answer) {
           let scoreText = document.querySelector('.scoreBoard');
+
           judge.textContent = "Correct";
           header.innerHTML = correct;
+          score += 100;
 
           scoreText.innerHTML = `Score: ${score}`;
 
@@ -133,20 +136,20 @@ function main() {
            next() 
           }, 1000);
           
-        } else if(i !== answer){
+        } 
+        if(i !== answer){
           judge.textContent = "wrong"; 
-
+          
         }
       }, {once: true});
     }
     
-    score += 100;
     options[0].textContent = option1;
     options[1].textContent = option2;
     options[2].textContent = option3;
     
   }
-};
+}
 
 const quiz = [
   {
@@ -167,4 +170,5 @@ const quiz = [
     answer: 2,
     correct: "The <u>kid's</u> toy was stolen"
   }
+  
 ];
