@@ -126,7 +126,6 @@ function main() {
           let scoreText = document.querySelector('.scoreBoard');
           judge.textContent = "Correct";
           header.innerHTML = correct;
-          score + 100;
 
           scoreText.innerHTML = `Score: ${score}`;
 
@@ -141,6 +140,7 @@ function main() {
       }, {once: true});
     }
     
+    score += 100;
     options[0].textContent = option1;
     options[1].textContent = option2;
     options[2].textContent = option3;
