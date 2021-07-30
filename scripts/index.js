@@ -123,10 +123,19 @@ function main() {
     for (let i = 0; i < quiz.length; i++) {
 
       options[i].addEventListener("click", () => {
+<<<<<<< HEAD
         if (i == answer) {
+=======
+        if (i === answer) {
+          let scoreText = document.querySelector('.scoreBoard');
+
+>>>>>>> 0e9da7cb305f47d6601602371fc9095d3b1c3239
           judge.textContent = "Correct";
           header.innerHTML = correct;
           score += 100;
+
+          scoreText.innerHTML = `Score: ${score}`;
+
           setTimeout(() => {
            next() 
           }, 1000);
