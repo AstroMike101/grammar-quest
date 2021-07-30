@@ -94,6 +94,7 @@ function main() {
   // scoreBoard.textContent = `Score: ${score}`;
 
   random();
+ 
   
   function random() {
     let random = Math.ceil(Math.random() * quiz.length - 1);
@@ -128,8 +129,8 @@ function main() {
 
           judge.textContent = "Correct";
           header.innerHTML = correct;
+          
           score += 100;
-
           scoreText.innerHTML = `Score: ${score}`;
 
           setTimeout(() => {
@@ -139,6 +140,7 @@ function main() {
         } 
         if(i !== answer){
           judge.textContent = "wrong"; 
+          
           
         }
       }, {once: true});
