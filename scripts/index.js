@@ -97,19 +97,18 @@ function main() {
   
   function random() {
     let random = Math.ceil(Math.random() * quiz.length - 1);
-    for (let i = 0; i <= random; i++) {
       choices(
-        quiz[i].question,
+        quiz[random].question,
         quiz[random].answer,
-        quiz[i].options[0],
-        quiz[i].options[1],
-        quiz[i].options[2],
-        quiz[i].correct
+        quiz[random].options[0],
+        quiz[random].options[1],
+        quiz[random].options[2],
+        quiz[random].correct,
+        quiz[random].options
         );
         judge.textContent = "Choose the correct option"; 
       nextbtn.remove() 
     }
-  }
   
   function next(){
     nextBtnDiv.appendChild(nextbtn)
@@ -118,13 +117,13 @@ function main() {
     nextbtn.addEventListener("click", random)
   }
   
-  function choices(question, answer, option1, option2, option3, correct){ 
+  function choices(question, answer, option1, option2, option3, correct, op){ 
   header.innerHTML = question;  
-    for (let i = 0; i < quiz.length; i++) {
-        
-      options[i].addEventListener("click", () => {
-        if (i === answer) {
-          let scoreText = document.querySelector('.scoreBoard');
+
+  let scoreText = document.querySelector('.scoreBoard');
+
+      options.forEach(option => option.addEventListener("click", () => {
+        if (option.textContent == op[answer]) {
 
           judge.textContent = "Correct";
           header.innerHTML = correct;
@@ -135,13 +134,12 @@ function main() {
            next() 
           }, 1000);
           
-        } 
-        if(i !== answer){
+        }
+        if(option.textContent !== op[answer]){
           judge.textContent = "wrong"; 
           
         }
-      }, {once: true});
-    }
+      }, {once: true}));
     
     options[0].textContent = option1;
     options[1].textContent = option2;
@@ -162,6 +160,12 @@ const quiz = [
     options: [ "man", "men", "mens"],
     answer: 0,
     correct: "The <u>man</u> was on the street"
+  },
+  {
+    question: "What's my name on Discord? ___",
+    options: [ "buug", "bug", "buggy"],
+    answer: 0,
+    correct: "What's my name on Discord? <u>buug</u>."
   },
   {
     question: "The _____ toy was stolen",
