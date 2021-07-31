@@ -34,41 +34,26 @@ body {
   box-shadow: 0 2px 25px white;
 }
 
-.lives {
-  position: relative;
-  font-size: 2em;
-  text-align: center;
-  margin: 2vh 0vh 0 1vh;
-  color: #0F3153;
-}
-
-.heart{
-  position: initial;
-  width: 50px; 
-  padding-top: 5px;
-}
-
-.lifeCounter{ 
-  color: white;
-}
-
-
 .headerDiv {
   display: flex;
   justify-content: space-between;
   padding-right: 1.5em;
+
+  
   
 }
 
 .scoreBoard { 
-  font-size: 3em;
+  font-size: 2em;
   background-color: #0e3c61;
   color: white;
   padding: 0 2vh;
+
   justify-self: right;
   text-align: right;
-  margin: 0; 
+  
   position: relative; 
+  top:10px;
   
 }
 
@@ -79,6 +64,20 @@ body {
   background-color: #225885;
   margin-top: 10px;
   margin-bottom: 100px; 
+  color:white;
+  box-shadow: 0 2px 25px #87D2E0;
+}
+
+.levelsBtn { 
+  font-size: 1.5em;
+  /* padding: 1vh; */
+  margin-left: 1vw;
+  /* font-family: "Rowdies", cursive; */
+  background-color: #225885;
+  /* margin-top: 10px; */
+  position: relative;
+    top: 12px;
+  cursor:pointer;
   color:white;
   box-shadow: 0 2px 25px #87D2E0;
 }
@@ -175,7 +174,8 @@ border-radius: 20vh;
   and (min-device-width: 375px) 
   and (max-device-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3) { 
-  .choices {   
+ 
+    .choices {   
     font-size: 2.5em;
     margin: 20px;
     padding: 1vh;
@@ -212,23 +212,8 @@ border-radius: 20vh;
         width: 100px; 
       }
       
-.scoreBoard { 
-  font-size: 4em;
-  justify-self: right;
-  text-align: right;
-  margin: 0; 
-  position: relative; 
-  color:rgb(21, 65, 131)
-  
-}
 
-.lives {
-  position: relative;
-  font-size: 5em;
-  text-align: center;
-  margin: 0vh 0vh 0 1vh;
-  color: #0F3153;
-}
+
     
 }
 /* media query for iPhone 6+, 7+ and 8+ to make buttons centered */
