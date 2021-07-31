@@ -47,7 +47,7 @@ body {
   font-size: 2em;
   background-color: #0e3c61;
   color: white;
-  padding: 0 2vh;
+  padding: 10px;
 
   justify-self: right;
   text-align: right;
@@ -62,8 +62,9 @@ body {
   padding: 1vh;
   font-family: "Rowdies", cursive;
   background-color: #225885;
-  margin-top: 10px;
-  margin-bottom: 100px; 
+  margin-top: 8px;
+
+  
   color:white;
   box-shadow: 0 2px 25px #87D2E0;
 }
@@ -74,9 +75,9 @@ body {
   margin-left: 1vw;
   /* font-family: "Rowdies", cursive; */
   background-color: #225885;
-  /* margin-top: 10px; */
-  position: relative;
-    top: 12px;
+  margin-top: 15px;
+  padding: 10px;
+  
   cursor:pointer;
   color:white;
   box-shadow: 0 2px 25px #87D2E0;
