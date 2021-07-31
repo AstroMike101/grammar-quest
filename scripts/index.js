@@ -110,11 +110,14 @@ function main() {
       nextbtn.remove() 
     }
   
+
+
+
   function next(){
-    nextBtnDiv.appendChild(nextbtn)
+    nextBtnDiv.appendChild(nextbtn);
     nextbtn.textContent = "Next ->"
     judge.textContent = "Well done!"
-    nextbtn.addEventListener("click", random)
+    nextbtn.addEventListener("click", random);
   }
   
   function choices(question, answer, option1, option2, option3, correct, op){ 
@@ -124,6 +127,12 @@ function main() {
 
       options.forEach(option => option.addEventListener("click", () => {
         if (option.textContent == op[answer]) {
+
+            option.classList.add("greenChange");
+            setTimeout(function(){
+              option.classList.remove("greenChange");
+            },1500);
+        
 
           judge.textContent = "Correct";
           header.innerHTML = correct;
@@ -136,7 +145,12 @@ function main() {
           
         }
         if(option.textContent !== op[answer]){
-          judge.textContent = "wrong"; 
+          option.classList.add("redChange");
+          setTimeout(function(){
+            option.classList.remove("redChange");
+          },1500);
+          judge.textContent = "Wrong"; 
+
           
         }
       }, {once: true}));

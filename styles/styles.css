@@ -104,7 +104,7 @@ body {
 
 .start-btn:hover , .musicBtn:hover , .choices:hover{
   transform: scale(1.05, 1.05);
-  background-color: #0f3153;
+  
   cursor: pointer;
 }
 /* quiz question */
@@ -139,8 +139,8 @@ body {
   padding: 2vh 10vh;
   margin: auto;
   margin-top: 10vh;
-  width: 20%;
   background-image: linear-gradient(#EFA09E, #1DACED);
+
   border: 1px solid rgb(31, 89, 165); 
   
 }
@@ -232,6 +232,16 @@ border-radius: 20vh;
   left: 3.5em;
   
 }
+}
+
+.greenChange { 
+  background-image: none;
+  background-color: green;
+}
+
+.redChange { 
+  background-image: none;
+  background-color: red;
 }
 
 
