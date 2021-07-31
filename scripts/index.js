@@ -155,7 +155,7 @@ function main() {
         } 
         
 
-        if (option.textContent !==  op[answer]){
+        else {
           option.classList.add("redChange");
           setTimeout(function(){
             option.classList.remove("redChange");
