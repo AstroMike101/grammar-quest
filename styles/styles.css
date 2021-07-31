@@ -60,7 +60,6 @@ body {
 .musicBtn{ 
   font-size: 1.5em;
   padding: 1vh;
-  font-family: "Rowdies", cursive;
   background-color: #225885;
   margin-top: 8px;
 
@@ -70,7 +69,7 @@ body {
 }
 
 .levelsBtn { 
-  font-size: 1.5em;
+  font-size:1.5em;
   /* padding: 1vh; */
   margin-left: 1vw;
   /* font-family: "Rowdies", cursive; */
@@ -104,7 +103,6 @@ body {
 
 .start-btn:hover , .musicBtn:hover , .choices:hover{
   transform: scale(1.05, 1.05);
-  
   cursor: pointer;
 }
 /* quiz question */
@@ -208,11 +206,7 @@ border-radius: 20vh;
       margin: 7vh 5vh 0 0;
       /* border-radius: 5vh;    */
       }
-      .heart{
-        position: relative;
-        width: 100px; 
-      }
-      
+     
 
 
     

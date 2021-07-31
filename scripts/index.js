@@ -6,10 +6,21 @@ let body = document.querySelector(".app");
 let headerDiv = document.querySelector('.headerDiv');
 let demo = document.querySelector("#demo")
 let isPlaying = false; 
+let levelsBtn = document.querySelector('.levelsBtn');
 
 function musicStart(){ 
     musicSound.play();  
 }
+
+function removeAll() {
+  let hero = document.querySelector('.hero-heading');
+  hero.remove();
+  start.remove();
+}
+
+levelsBtn.addEventListener('click', removeAll);
+
+
 
  
 start.addEventListener("mouseover", () => {
@@ -126,14 +137,12 @@ function main() {
   let scoreText = document.querySelector('.scoreBoard');
 
       options.forEach(option => option.addEventListener("click", () => {
-        if (option.textContent == op[answer]) {
-
+        if (option.textContent === op[answer]) {
             option.classList.add("greenChange");
             setTimeout(function(){
               option.classList.remove("greenChange");
-            },1500);
-        
-
+            },500);
+          
           judge.textContent = "Correct";
           header.innerHTML = correct;
           score += 100;
@@ -141,18 +150,19 @@ function main() {
 
           setTimeout(() => {
            next() 
-          }, 1000);
+          }, 500);
           
-        }
-        if(option.textContent !== op[answer]){
+        } 
+        
+
+        if (option.textContent !==  op[answer]){
           option.classList.add("redChange");
           setTimeout(function(){
             option.classList.remove("redChange");
-          },1500);
+          },500);
           judge.textContent = "Wrong"; 
-
-          
         }
+
       }, {once: true}));
     
     options[0].textContent = option1;
@@ -186,6 +196,7 @@ const quiz = [
     options: ["kids", "kid", "kid's"],
     answer: 2,
     correct: "The <u>kid's</u> toy was stolen"
-  }
+  }, 
+  
   
 ];
