@@ -14,7 +14,6 @@ function musicStart(){
     musicSound.play();  
 }
 
-
 function hideGamePage() {
   gameDiv.style.display = 'none';
 }
@@ -28,9 +27,6 @@ levelsBtn.addEventListener('click', () => {
   showLevelsPage();
 })
 
-
-
- 
 start.addEventListener("mouseover", () => {
   btnSound.play(); 
 });
