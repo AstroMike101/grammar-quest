@@ -9,7 +9,7 @@ body {
   background-size: cover;
   height: 100vh;
   background-repeat: no-repeat;
-  background-position: 100%;
+  background-position:100%;
   
 }
 
@@ -164,9 +164,7 @@ background-color: rgb(84, 189, 224);
 animation: nextBtn 0.5s;
 border: 3px solid white; 
 cursor: pointer; 
-margin-top: 15vh;
-
- 
+margin-top: 10vh;
 font-family: 'Press Start 2P', cursive;
 
 
@@ -201,11 +199,11 @@ font-family: 'Press Start 2P', cursive;
       margin-top: 25vh;
     }
     
-.nextBtnDiv { 
+  .nextBtnDiv { 
   display:flex;
   justify-content: right;
 }
-    .nextBtn { 
+  .nextBtn { 
       position: relative;
       font-size: 2em;
       padding-left: 3vh;
@@ -218,7 +216,7 @@ font-family: 'Press Start 2P', cursive;
       /* border-radius: 5vh;    */
       }
      
-
+   
 
     
 }
@@ -235,9 +233,12 @@ font-family: 'Press Start 2P', cursive;
   padding: 1vh 3.5vh 1vh 3.5vh;
   position: relative;
   left: 3.5em;
-  
 }
+
+
 }
+
+
 
 .greenChange { 
   background-image: none;
