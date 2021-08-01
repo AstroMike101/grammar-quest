@@ -14,7 +14,6 @@ function musicStart(){
     musicSound.play();  
 }
 
-
 function hideGamePage() {
   gameDiv.style.display = 'none';
 }
@@ -28,9 +27,6 @@ levelsBtn.addEventListener('click', () => {
   showLevelsPage();
 })
 
-
-
- 
 start.addEventListener("mouseover", () => {
   btnSound.play(); 
 });
@@ -129,49 +125,96 @@ function main() {
       nextbtn.remove() 
     }
   
-
-
-
   function next(){
     nextBtnDiv.appendChild(nextbtn);
     nextbtn.textContent = "Next ->"
     judge.textContent = "Well done!"
-    nextbtn.addEventListener("click", random);
+    nextbtn.addEventListener("click", () => random());
   }
   
-  function choices(question, answer, option1, option2, option3, correct, op){ 
-  header.innerHTML = question;  
+  function choices(question, answer, option1, option2, option3, correct, op){
 
-  let scoreText = document.querySelector('.scoreBoard');
+    header.innerHTML = question;  
 
-      options.forEach(option => option.addEventListener("click", () => {
-        if (option.textContent === op[answer]) {
-            option.classList.add("greenChange");
-            setTimeout(function(){
-              option.classList.remove("greenChange");
-            },500);
+    let scoreText = document.querySelector('.scoreBoard');
+
+    // function cleanOpArray() {
+    //   opArray.splice(0, 1);
+    // }
+
+    function removeRedChange(option) {
+    setTimeout(function(){ option.classList.remove("redChange");}, 500);
+    }
+
+    function removeGreenChange(option) {
+    setTimeout(function(){ option.classList.remove("greenChange");}, 500);
+    }
+
+    function displayWin() {
+    judge.textContent = "Correct";
+    header.innerHTML = correct;
+    score += 100;
+    scoreText.innerHTML = `Score: ${score}`;
+
+    setTimeout(() => {next()}, 500);
+    }
+
+    function displayLoss() {
+    judge.textContent = "Wrong"; 
+    }
+
+    function answerCheck(option) {
+      console.log(op);
+      console.log(op[answer]);
+
+      if (option.innerHTML === op[answer]) {
+        option.classList.add('greenChange');
+        removeGreenChange(option);
+        displayWin();
+      }
+      else {
+        option.classList.add("redChange");
+        removeRedChange(option);
+        displayLoss();
+      }
+      // cleanOpArray();
+    }
+
+    // Checks each option for a win or loss on click.
+    options.forEach(option => {
+      option.addEventListener('click',() => {
+        answerCheck(option)
+      });
+    });
+
+      // options.forEach(option => option.addEventListener("click", () => {
+      //   if (option.textContent === op[answer]) {
+      //       option.classList.add("greenChange");
+      //       setTimeout(function(){
+      //         option.classList.remove("greenChange");
+      //       },500);
           
-          judge.textContent = "Correct";
-          header.innerHTML = correct;
-          score += 100;
-          scoreText.innerHTML = `Score: ${score}`;
+      //     judge.textContent = "Correct";
+      //     header.innerHTML = correct;
+      //     score += 100;
+      //     scoreText.innerHTML = `Score: ${score}`;
 
-          setTimeout(() => {
-           next() 
-          }, 500);
+      //     setTimeout(() => {
+      //      next() 
+      //     }, 500);
           
-        } 
+      //   } 
         
 
-        else {
-          option.classList.add("redChange");
-          setTimeout(function(){
-            option.classList.remove("redChange");
-          },500);
-          judge.textContent = "Wrong"; 
-        }
+      //   else {
+      //     option.classList.add("redChange");
+      //     setTimeout(function(){
+      //       option.classList.remove("redChange");
+      //     },500);
+      //     judge.textContent = "Wrong"; 
+      //   }
 
-      }, {once: true}));
+      // }, {once: true}));
     
     options[0].textContent = option1;
     options[1].textContent = option2;
