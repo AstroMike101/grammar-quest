@@ -240,9 +240,27 @@ border-radius: 20vh;
 
 
 #game { 
-  display:block;
+  display:none;
 }
 
 #levels-page {
-  display:none;
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+  display:block;
+}
+
+#levelsBox { 
+  border: 6px solid gray;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  top: 10%;
+  width:60%;  
+  height:80%;
+  background-image: url("../images/background.png");
+  background-size:cover;
+ 
+
 }
