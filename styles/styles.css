@@ -1,3 +1,5 @@
+
+
 body {
   font-family: "Rowdies", cursive; 
 }
@@ -7,12 +9,15 @@ body {
   background-size: cover;
   height: 100vh;
   background-repeat: no-repeat;
+  
 }
 
 .hero-heading {
   padding-top: 20vh;
   text-align: center;
-  font-size: 6rem;
+  font-size: 4rem;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
   
   
 }
@@ -45,15 +50,15 @@ body {
 
 .scoreBoard { 
   font-size: 2em;
-  background-color: #0e3c61;
+  
   color: white;
-  padding: 10px;
-
+  padding: 5px;
+  font-family: 'Press Start 2P', cursive;
   justify-self: right;
   text-align: right;
   
   position: relative; 
-  top:10px;
+  top:20px;
   
 }
 
@@ -62,8 +67,7 @@ body {
   padding: 1vh;
   background-color: #225885;
   margin-top: 8px;
-
-  
+  font-family: 'Press Start 2P', cursive;
   color:white;
   box-shadow: 0 2px 25px #87D2E0;
 }
@@ -76,7 +80,7 @@ body {
   background-color: #225885;
   margin-top: 15px;
   padding: 10px;
-  
+  font-family: 'Press Start 2P', cursive;
   cursor:pointer;
   color:white;
   box-shadow: 0 2px 25px #87D2E0;
@@ -108,8 +112,9 @@ body {
 /* quiz question */
 .quiz-scr{
   text-align: center;
-  font-size: 4em;
-  color: #0e3c61;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.3em;
+  color: white;
   text-shadow: rgb(233, 233, 233) 0px 0px 5px;
   margin-top: 15vh;
 }
@@ -118,8 +123,9 @@ body {
 .judge{
   text-align: center;
   margin-top: 10vh;
-  font-size: 2.5em;
-  color: rgb(207, 207, 207);
+  font-size: 1.3em;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
   text-shadow: black 0px 0px 5px;
 }
 
@@ -131,12 +137,13 @@ body {
 }
 
 .choices{
-  font-size: 2.5em;
+  font-size: 1.5em;
   display: inline-block;
   align-self:auto;
   padding: 2vh 10vh;
   margin: auto;
   margin-top: 10vh;
+  font-family: 'Press Start 2P', cursive;
   background-image: linear-gradient(#EFA09E, #1DACED);
 
   border: 1px solid rgb(31, 89, 165); 
