@@ -240,7 +240,7 @@ border-radius: 20vh;
 
 
 #game { 
-  display:none;
+  display: block;
 }
 
 #levels-page {
@@ -248,7 +248,7 @@ border-radius: 20vh;
   background-size: cover;
   height: 100vh;
   background-repeat: no-repeat;
-  display:block;
+  display: none;
 }
 
 #levelsBox { 
