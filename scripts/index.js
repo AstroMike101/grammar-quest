@@ -7,18 +7,26 @@ let headerDiv = document.querySelector('.headerDiv');
 let demo = document.querySelector("#demo")
 let isPlaying = false; 
 let levelsBtn = document.querySelector('.levelsBtn');
+let levelsPage = document.querySelector('#levels-page');
+let gameDiv = document.querySelector('#game');
 
 function musicStart(){ 
     musicSound.play();  
 }
 
-function removeAll() {
-  let hero = document.querySelector('.hero-heading');
-  hero.remove();
-  start.remove();
+
+function hideGamePage() {
+  gameDiv.style.display = 'none';
 }
 
-levelsBtn.addEventListener('click', removeAll);
+function showLevelsPage() {
+  levelsPage.style.display = 'block';
+}
+
+levelsBtn.addEventListener('click', () => { 
+  hideGamePage();
+  showLevelsPage();
+})
 
 
 

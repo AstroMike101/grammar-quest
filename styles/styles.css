@@ -239,3 +239,10 @@ border-radius: 20vh;
 }
 
 
+#game { 
+  display:block;
+}
+
+#levels-page {
+  display:none;
+}
