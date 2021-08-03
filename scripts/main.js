@@ -17,7 +17,7 @@ let init = (() => {
         levelsPage.style.display = 'block';
     }
 
-    let levelsSelectionBtn = document.querySelector('.levelsBtn');
+    let levelsSelectionBtn = document.querySelector('.levels-btn');
     levelsSelectionBtn.addEventListener('click', () => { 
         hideGamePage();
         showLevelsPage();
@@ -30,43 +30,64 @@ let init = (() => {
         document.querySelector(".hero-heading").remove();
     }
 
+    function populateLevel() {
+        let body = document.querySelector('body');
+
+        let gameQuestion = document.createElement("div");
+        gameQuestion.classList.add("quiz-question-text");
+        body.appendChild(gameQuestion);
+
+        // Could have a better name for this
+        let answerNotifText = document.createElement('h2');
+        answerNotifText.classList.add('answer-notif-text');
+        answerNotifText.innerHTML = "Choose the correct option";
+        body.appendChild(answerNotifText);
+
+        let choicesContainer = document.createElement('div');
+        choicesContainer.classList.add('choices-container');
+        body.appendChild(choicesContainer);
+
+        let numOfGameOptions = 3;
+        for (let i = 0; i < numOfGameOptions; ++i) {
+            let gameOption = document.createElement('button');
+            gameOption.classList.add('game-option');
+            choicesContainer.appendChild(gameOption);
+        }
+
+        let musicBtnContainer = document.createElement('button');
+        musicBtnContainer.classList.add('music-btn-container');
+        body.appendChild(musicBtnContainer);
+
+        let musicBtn = document.createElement('img');
+        musicBtn.classList.add('music-btn-img');
+        musicBtn.setAttribute('src', '../images/sound.png');
+        musicBtnContainer.appendChild(musicBtn);
+        // musicBtn.remove(); // removes the music button from homescreen (Why is this needed?)
+
+        let headerContainer = document.querySelector('.header-container');
+
+        let scoreBoard = document.createElement('p');
+        scoreBoard.classList.add('score-board');
+        headerContainer.appendChild(scoreBoard);
+
+        let nextBtnContainer = document.createElement('div');
+        nextBtnContainer.classList.add('next-btn-container');
+        body.appendChild(nextBtnContainer);
+
+        let nextBtn = document.createElement('button');
+        nextBtn.classList.add('next-btn');
+
+        answerNotifText.innerHTML = 'Choose the correct option:';
+    }
+
     function startGame() {
         playMusic();
         removeHomePageContent();
-        mainGameFunction();
+        populateLevel();
     }
 
     let gameStartBtn = document.querySelector(".start-btn");
     gameStartBtn.addEventListener( 'click', startGame() );
-
-    const quiz = [
-      {
-        question: "____ exam was yesterday",
-        options: ["him", "he", "his"],
-        answer: 2,
-        correct: "<u>His</u> exam was yesterday"
-      },
-      {
-        question: "The ___ was on the street",
-        options: [ "man", "men", "mens"],
-        answer: 0,
-        correct: "The <u>man</u> was on the street"
-      },
-      {
-        question: "What's my name on Discord? ___",
-        options: [ "buug", "bug", "buggy"],
-        answer: 0,
-        correct: "What's my name on Discord? <u>buug</u>."
-      },
-      {
-        question: "The _____ toy was stolen",
-        options: ["kids", "kid", "kid's"],
-        answer: 2,
-        correct: "The <u>kid's</u> toy was stolen"
-      }, 
-      
-      
-    ];
   
     // Here we will have the logic that involves the levels.
   
