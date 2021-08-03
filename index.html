@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title></title>
-    <meta charset="UTF-8" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"
-  </head>
-
-  <body>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Punctuation Game</title>
+</head>
+<body>
     <div id="levels-page">
-      <div id="levelsBox">
-      
-      </div>
+        <div id="levelsBox"></div>
     </div>
+      
     <div id="game">
-    <div class="app">
-      <div class="headerDiv">
-        <button class="levelsBtn">Level Select</button>
-        <button onclick="musicStart()" class='musicBtn'>Music <img class="music-btn-pic" src="images/sound.png" ></button>
-      </div>
-      
-			<div class="hero-heading">The Punctuation Game</div>
-				<button class="start-btn">Start</button>
-				<audio id="bubble-sound" src="./assets/bubble.mp3"></audio>
-        <audio  id="music-sound" loop src="./assets/8bitMusic1.mp3"></audio> 
+        <div class="app">
+            <div class="headerDiv">
+                <button class="levelsBtn">Level Select</button>
+                <button onclick="musicStart()" class='musicBtn'>Music <img class="music-btn-pic" src="images/sound.png" ></button>
+            </div>
+            <div class="hero-heading">The Punctuation Game</div>
+            <button class="start-btn">Start</button>
+            <audio id="bubble-sound" src="./assets/bubble.mp3"></audio>
+            <audio  id="music-sound" loop src="./assets/8bitMusic1.mp3"></audio> 
+        </div>
     </div>
-  </div>
-    
+
     <script src="scripts/index.js"></script>
-  </body>
+</body>
 </html>
