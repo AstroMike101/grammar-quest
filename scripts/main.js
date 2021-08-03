@@ -240,10 +240,17 @@ let init = (() => {
 
         let gameOptionsArr = document.querySelectorAll('.game-option');
         gameOptionsArr.forEach(option => {
-            option.addEventListener('click',() => {
-                option.remove();
-            });
+            option.remove();
         });
+
+        let choicesContainer = document.querySelector('.choices-container');
+        let numOfGameOptions = 3;
+        for (let i = 0; i < numOfGameOptions; ++i) {
+            let gameOptionBtn = document.createElement('button');
+            gameOptionBtn.classList.add('game-option');
+            gameOptionBtn.classList.add(`game-option-${i + 1}`);
+            choicesContainer.appendChild(gameOptionBtn);
+        }
     }
 
     function playNextLevel() {
@@ -260,7 +267,5 @@ let init = (() => {
 
     let gameStartBtn = document.querySelector(".start-btn");
     gameStartBtn.addEventListener( 'click', () => startGame() );
-  
-    // Here we will have the logic that involves the levels.
-  
+    
 })();
