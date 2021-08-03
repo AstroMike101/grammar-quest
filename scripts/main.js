@@ -25,17 +25,20 @@ let init = (() => {
 
     function removeHomePageContent() {
         let gameStartBtn = document.querySelector(".start-btn");
-
         gameStartBtn.remove();
+
+        let musicBtn = document.getElementById('home-page-music-btn');
+        musicBtn.remove();
+
         document.querySelector(".hero-heading").remove();
     }
 
     function createMusicBtn() {
-        let body = document.querySelector('body');
+        let mainPage = document.querySelector('mainPage');
 
         let musicBtnContainer = document.createElement('button');
         musicBtnContainer.classList.add('music-btn-container');
-        body.appendChild(musicBtnContainer);
+        mainPage.appendChild(musicBtnContainer);
 
         let musicBtn = document.createElement('img');
         musicBtn.classList.add('music-btn-img');
@@ -59,21 +62,21 @@ let init = (() => {
     }
 
     function populateLevel() {
-        let body = document.querySelector('body');
+        let mainPage = document.querySelector('.app');
 
         let gameQuestion = document.createElement("div");
         gameQuestion.classList.add("quiz-question-text");
-        body.appendChild(gameQuestion);
+        mainPage.appendChild(gameQuestion);
 
         // Could have a better name for this
         let answerNotifText = document.createElement('h2');
         answerNotifText.classList.add('answer-notif-text');
         answerNotifText.innerHTML = "Choose the correct option";
-        body.appendChild(answerNotifText);
+        mainPage.appendChild(answerNotifText);
 
         let choicesContainer = document.createElement('div');
         choicesContainer.classList.add('choices-container');
-        body.appendChild(choicesContainer);
+        mainPage.appendChild(choicesContainer);
 
         let numOfGameOptions = 3;
         for (let i = 0; i < numOfGameOptions; ++i) {
@@ -93,7 +96,7 @@ let init = (() => {
 
         let nextBtnContainer = document.createElement('div');
         nextBtnContainer.classList.add('next-btn-container');
-        body.appendChild(nextBtnContainer);
+        mainPage.appendChild(nextBtnContainer);
 
         let nextBtn = document.createElement('button');
         nextBtn.classList.add('next-btn');
@@ -149,8 +152,8 @@ let init = (() => {
     }
 
     let gameStartBtn = document.querySelector(".start-btn");
-    gameStartBtn.addEventListener( 'click', startGame() );
+    gameStartBtn.addEventListener( 'click', () => startGame() );
   
     // Here we will have the logic that involves the levels.
   
-});
+})();
