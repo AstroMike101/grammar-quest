@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -18,9 +18,12 @@
       
     <div id="game">
         <div class="app">
-            <div class="headerDiv">
-                <button class="levelsBtn">Level Select</button>
-                <button onclick="musicStart()" class='musicBtn'>Music <img class="music-btn-pic" src="images/sound.png" ></button>
+            <div class="header-container">
+                <button class="levels-btn">Level Select</button>
+                <button id="home-page-music-btn" onclick="musicStart()" class='music-btn'>
+                    Music
+                    <img class="music-btn-img" src="images/sound.png" >
+                </button>
             </div>
             <div class="hero-heading">The Punctuation Game</div>
             <button class="start-btn">Start</button>
@@ -29,6 +32,6 @@
         </div>
     </div>
 
-    <script src="scripts/index.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
