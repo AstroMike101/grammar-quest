@@ -34,7 +34,7 @@ let init = (() => {
     }
 
     function createMusicBtn() {
-        let mainPage = document.querySelector('mainPage');
+        let mainPage = document.querySelector('.app');
 
         let musicBtnContainer = document.createElement('button');
         musicBtnContainer.classList.add('music-btn-container');
@@ -135,13 +135,25 @@ let init = (() => {
         return quizArr
     }
 
+    function createRandomNum(arrLength) {
+        let randomNum = Math.ceil(Math.random() * arrLength -1);
+
+        return randomNum;
+    }
+
     function startGameLogic() {
+
         let quizArr = createQuizArr();
-        console.log('play');
+
+        let randomNum = createRandomNum(quizArr.length);
+        let randomQuestion = quizArr[randomNum];
+        console.log(randomQuestion.question);
 
         let score = 0;
         let scoreBoard = document.querySelector('.score-board');
         scoreBoard.textContent = `Score: ${score}`;
+
+        
     }
 
     function startGame() {
