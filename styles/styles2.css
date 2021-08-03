@@ -38,13 +38,10 @@
   box-shadow: 0 2px 25px white;
 }
 
-.headerDiv {
+.header-container {
   display: flex;
   justify-content: space-between;
   padding-right: 1.5em;
-
-  
-  
 }
 
 .score-board { 
@@ -61,7 +58,7 @@
   
 }
 
-.musicBtn{ 
+.music-btn{ 
   font-size: 1.5em;
   padding: 1vh;
   background-color: #225885;
@@ -71,7 +68,7 @@
   box-shadow: 0 2px 25px #87D2E0;
 }
 
-.levelsBtn { 
+.levels-btn { 
   font-size:1.5em;
   /* padding: 1vh; */
   margin-left: 1vw;
@@ -104,7 +101,7 @@
   height: 30px; 
   }
 
-.start-btn:hover , .musicBtn:hover , .game-option:hover{
+.start-btn:hover , .music-btn:hover , .game-option:hover{
   transform: scale(1.05, 1.05);
   cursor: pointer;
 }
