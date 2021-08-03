@@ -10,6 +10,54 @@ let levelsBtn = document.querySelector('.levelsBtn');
 let levelsPage = document.querySelector('#levels-page');
 let gameDiv = document.querySelector('#game');
 
+// EVERYTHING ABOVE THIS IS OLD CODE
+
+// initializes the program - It starts here.
+let init = (() => {
+  // Here we will have the music logic. When to start playing, event listeners, etc.
+  function startMusic() {
+    // When this is called the music will start playing.
+  }
+
+
+  // Here we will have the game logic, like when the buttons will turn green or point increments etc.
+  const quiz = [
+    {
+      question: "____ exam was yesterday",
+      options: ["him", "he", "his"],
+      answer: 2,
+      correct: "<u>His</u> exam was yesterday"
+    },
+    {
+      question: "The ___ was on the street",
+      options: [ "man", "men", "mens"],
+      answer: 0,
+      correct: "The <u>man</u> was on the street"
+    },
+    {
+      question: "What's my name on Discord? ___",
+      options: [ "buug", "bug", "buggy"],
+      answer: 0,
+      correct: "What's my name on Discord? <u>buug</u>."
+    },
+    {
+      question: "The _____ toy was stolen",
+      options: ["kids", "kid", "kid's"],
+      answer: 2,
+      correct: "The <u>kid's</u> toy was stolen"
+    }, 
+    
+    
+  ];
+
+  // Here we will have the logic that involves the levels.
+
+
+})();
+
+// EVERYTHING BELOW THIS IS THE OLD CODE
+
+
 //function to begin the music 
 function musicStart(){ 
     musicSound.play();  
