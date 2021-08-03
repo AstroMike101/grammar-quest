@@ -1,4 +1,5 @@
 let init = (() => {
+    let score = 0;
 
     // Here we will have the music logic. When to start playing, event listeners, etc.  
     function playMusic(){
@@ -80,9 +81,10 @@ let init = (() => {
 
         let numOfGameOptions = 3;
         for (let i = 0; i < numOfGameOptions; ++i) {
-            let gameOption = document.createElement('button');
-            gameOption.classList.add('game-option');
-            choicesContainer.appendChild(gameOption);
+            let gameOptionBtn = document.createElement('button');
+            gameOptionBtn.classList.add('game-option');
+            gameOptionBtn.classList.add(`game-option-${i + 1}`);
+            choicesContainer.appendChild(gameOptionBtn);
         }
 
         createMusicBtn();
@@ -93,15 +95,6 @@ let init = (() => {
         let scoreBoard = document.createElement('p');
         scoreBoard.classList.add('score-board');
         headerContainer.appendChild(scoreBoard);
-
-        let nextBtnContainer = document.createElement('div');
-        nextBtnContainer.classList.add('next-btn-container');
-        mainPage.appendChild(nextBtnContainer);
-
-        let nextBtn = document.createElement('button');
-        nextBtn.classList.add('next-btn');
-
-        answerNotifText.innerHTML = 'Choose the correct option:';
     }
 
     function createQuizArr() {
@@ -127,7 +120,7 @@ let init = (() => {
             {
               question: "The _____ toy was stolen",
               choices: ["kids", "kid", "kid's"],
-              answer: 'kids',
+              answer: 'kid\'s',
               correctSentence: "The <u>kid's</u> toy was stolen"
             }, 
         ];
@@ -141,19 +134,121 @@ let init = (() => {
         return randomNum;
     }
 
+    function removeRedChange(option) {
+        setTimeout(function(){ option.classList.remove("redChange");}, 500);
+    }
+
+    function removeGreenChange(option) {
+        setTimeout(function(){ option.classList.remove("greenChange");}, 500);
+    }
+
+    function answerCheck(option, question) {
+        let correctSentence = question.correctSentence;
+        console.log(correctSentence);
+  
+        if (option.textContent === question.answer) {
+            option.classList.add('greenChange');
+            removeGreenChange(option);
+
+            displayWin(correctSentence);
+        }
+        else {
+            option.classList.add("redChange");
+            removeRedChange(option);
+
+            displayLoss();
+        }
+        
+        // cleanOpArray();
+    }
+
+    function showNextBtn(){
+        let mainPage = document.querySelector('.app');
+
+        let nextBtnContainer = document.createElement('div');
+        nextBtnContainer.classList.add('next-btn-container');
+        mainPage.appendChild(nextBtnContainer);
+
+        let nextBtn = document.createElement("button");  //creates the actual next button 
+        nextBtn.classList.add("next-btn");
+        nextBtnContainer.appendChild(nextBtn);
+
+        let answerNotifText = document.querySelector('.answer-notif-text');
+        nextBtn.innerHTML = "Next ->";
+        answerNotifText.innerHTML = "Well done!";
+        nextBtn.addEventListener( "click", () => playNextLevel() );
+    }
+
+    function displayWin(correctSentence) {
+        let answerNotifText = document.querySelector('.answer-notif-text');
+        let gameQuestion = document.querySelector(".quiz-question-text");
+
+        answerNotifText.textContent = "Correct";
+        gameQuestion.innerHTML = correctSentence;
+
+        score += 100;
+
+        let scoreBoard = document.querySelector('.score-board');
+        scoreBoard.innerHTML = `Score: ${score}`;
+        setTimeout( () => { showNextBtn() }, 500);
+    }
+
+    function displayLoss() {
+        let answerNotifText = document.querySelector('.answer-notif-text');
+        answerNotifText.textContent = "Wrong"; 
+    }
+
     function startGameLogic() {
-
-        let quizArr = createQuizArr();
-
-        let randomNum = createRandomNum(quizArr.length);
-        let randomQuestion = quizArr[randomNum];
-        console.log(randomQuestion.question);
-
-        let score = 0;
+        // score variable is declared at the top of this init() function.
+        
         let scoreBoard = document.querySelector('.score-board');
         scoreBoard.textContent = `Score: ${score}`;
 
+        let quizArr = createQuizArr();
+        let randomNum = createRandomNum(quizArr.length);
+        let randomQuestion = quizArr[randomNum];
+
+        let gameQuestion = document.querySelector(".quiz-question-text");
+        gameQuestion.innerHTML = randomQuestion.question;
+
+        let numOfGameOptions = 3;
+        for (let i = 0; i < numOfGameOptions; ++i) {
+            let gameOptionBtn = document.querySelector(`.game-option-${i + 1}`);
+            
+            let choicesArr = randomQuestion.choices;
+            let choice = choicesArr[i];
+            
+            gameOptionBtn.innerHTML = choice;
+        }
+
+        let gameOptionsArr = document.querySelectorAll('.game-option');
+        gameOptionsArr.forEach(option => {
+            option.addEventListener('click',() => {
+                console.log(option);
+                answerCheck(option, randomQuestion);
+            });
+        });
+    }
+
+    function removePreviousLevelContent() {
         
+        let nextBtnContainer = document.querySelector('.next-btn-container');
+        nextBtnContainer.remove();
+        
+        let answerNotifText = document.querySelector('.answer-notif-text');
+        answerNotifText.innerHTML = "Choose the correct option";
+
+        let gameOptionsArr = document.querySelectorAll('.game-option');
+        gameOptionsArr.forEach(option => {
+            option.addEventListener('click',() => {
+                option.remove();
+            });
+        });
+    }
+
+    function playNextLevel() {
+        removePreviousLevelContent();
+        startGameLogic();
     }
 
     function startGame() {
