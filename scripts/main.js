@@ -101,10 +101,51 @@ let init = (() => {
         answerNotifText.innerHTML = 'Choose the correct option:';
     }
 
+    function createQuizArr() {
+        const quizArr = [
+            {
+              question: "____ exam was yesterday",
+              choices: ['him', 'he', 'his'],
+              answer: 'his',
+              correctSentence: "<u>His</u> exam was yesterday"
+            },
+            {
+              question: "The ___ was on the street",
+              choices: [ "man", "men", "mens"],
+              answer: 'man',
+              correctSentence: "The <u>man</u> was on the street"
+            },
+            {
+              question: "What's my name on Discord? ___",
+              choices: [ "buug", "bug", "buggy"],
+              answer: 'buug',
+              correctSentence: "What's my name on Discord? <u>buug</u>."
+            },
+            {
+              question: "The _____ toy was stolen",
+              choices: ["kids", "kid", "kid's"],
+              answer: 'kids',
+              correctSentence: "The <u>kid's</u> toy was stolen"
+            }, 
+        ];
+
+        return quizArr
+    }
+
+    function startGameLogic() {
+        let quizArr = createQuizArr();
+        console.log('play');
+
+        let score = 0;
+        let scoreBoard = document.querySelector('.score-board');
+        scoreBoard.textContent = `Score: ${score}`;
+    }
+
     function startGame() {
         playMusic();
         removeHomePageContent();
         populateLevel();
+        startGameLogic();
     }
 
     let gameStartBtn = document.querySelector(".start-btn");
@@ -112,4 +153,4 @@ let init = (() => {
   
     // Here we will have the logic that involves the levels.
   
-})();
+});
