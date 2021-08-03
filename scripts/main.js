@@ -30,6 +30,34 @@ let init = (() => {
         document.querySelector(".hero-heading").remove();
     }
 
+    function createMusicBtn() {
+        let body = document.querySelector('body');
+
+        let musicBtnContainer = document.createElement('button');
+        musicBtnContainer.classList.add('music-btn-container');
+        body.appendChild(musicBtnContainer);
+
+        let musicBtn = document.createElement('img');
+        musicBtn.classList.add('music-btn-img');
+        musicBtn.setAttribute('src', '../images/sound.png');
+        musicBtnContainer.appendChild(musicBtn);
+
+        musicBtn.addEventListener("click", () => {
+            let musicPlaying = true;
+            // Don't know what this is. (musicSound);
+            let musicSound = document.querySelector("#music-sound");
+
+            if (musicPlaying) {
+              musicSound.pause()
+              musicPlaying = false;
+            }
+            else {
+              musicSound.play();
+              musicPlaying = true;
+            }
+        });
+    }
+
     function populateLevel() {
         let body = document.querySelector('body');
 
@@ -54,14 +82,7 @@ let init = (() => {
             choicesContainer.appendChild(gameOption);
         }
 
-        let musicBtnContainer = document.createElement('button');
-        musicBtnContainer.classList.add('music-btn-container');
-        body.appendChild(musicBtnContainer);
-
-        let musicBtn = document.createElement('img');
-        musicBtn.classList.add('music-btn-img');
-        musicBtn.setAttribute('src', '../images/sound.png');
-        musicBtnContainer.appendChild(musicBtn);
+        createMusicBtn();
         // musicBtn.remove(); // removes the music button from homescreen (Why is this needed?)
 
         let headerContainer = document.querySelector('.header-container');
