@@ -269,5 +269,7 @@
   padding: 30px 60px;
   cursor: pointer;
   border-radius: 10px;
-  font-size: 40px;
+  font-size: 1.5em;
+  font-family: "Rowdies", cursive;
+  opacity: 70%;
 }

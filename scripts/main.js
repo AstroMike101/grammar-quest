@@ -2,11 +2,35 @@ let init = (() => {
   let score = 0;
 
   // Here we will have the music logic. When to start playing, event listeners, etc.
-  function playMusic() {
-    let song = document.getElementById("music-sound");
+  function playEarthMusic() {
+    let song = document.getElementById("earth-sound");
     song.play();
   }
 
+  function playWaterMusic() {
+    let waterSound = document.getElementById("water-sound");
+    waterSound.play();
+  }
+
+  function playCastleMusic() {
+    let castleSound = document.getElementById("castle-sound");
+    castleSound.play();
+  }
+
+  function pauseEarthMusic() {
+    let song = document.getElementById("earth-sound");
+    song.pause();
+  }
+
+  function pauseWaterMusic() {
+    let waterSound = document.getElementById("water-sound");
+    waterSound.pause();
+  }
+
+  function pauseCastleMusic() {
+    let castleSound = document.getElementById("castle-sound");
+    castleSound.pause();
+  }
   // Here we will have the game logic, like when the buttons will turn green or point increments etc.
 
   function showGamePage() {
@@ -34,33 +58,42 @@ let init = (() => {
     showLevelsPage();
   });
 
-  function forwardLevelBtnFunc() {
+  function levelSelectFunctionality() {
     let selectBtn = document.querySelector(".selectBtn");
     let app = document.querySelector(".app");
     selectBtn.addEventListener("click", () => {
       showGamePage();
       hideLevelsPage();
-
       app.style.backgroundImage = `url("../images/${levels[i]}")`;
+
+      if (levels[i] == "water.gif") {
+        pauseEarthMusic();
+        pauseCastleMusic();
+        playWaterMusic();
+      } else if ((levels[i] = "castle.gif")) {
+        pauseEarthMusic();
+        pauseWaterMusic();
+        playCastleMusic();
+      }
     });
 
-    let i = 1;
+    let i = 0;
     let forwardSelectBtn = document.querySelector(".forwardSelectBtn");
     let backwardSelectBtn = document.querySelector(".backwardSelectBtn");
-
     levelsBox.style.backgroundImage = `url("../images/${levels[0]}")`;
 
     forwardSelectBtn.addEventListener("click", () => {
       let levelsBox = document.querySelector("#levelsBox");
+      i++;
+
       levelsBox.style.backgroundImage = `url("../images/${levels[i]}")`;
 
-      i++;
-      console.log(i);
+      console.log(levels[i]);
     });
 
     backwardSelectBtn.addEventListener("click", () => {
       i--;
-      console.log(i);
+      console.log(levels[i]);
 
       levelsBox.style.backgroundImage = `url("../images/${levels[i]}")`;
     });
@@ -103,10 +136,12 @@ let init = (() => {
     musicBtn.addEventListener("click", () => {
       let musicPlaying = true;
       // Don't know what this is. (musicSound);
-      let musicSound = document.querySelector("#music-sound");
 
       if (musicPlaying) {
-        musicSound.pause();
+        pauseEarthMusic();
+        pauseWaterMusic();
+        pauseCastleMusic();
+
         musicPlaying = false;
       } else {
         musicSound.play();
@@ -316,11 +351,11 @@ let init = (() => {
   }
 
   function startGame() {
-    playMusic();
+    playEarthMusic();
     removeHomePageContent();
     populateLevel();
     startGameLogic();
-    forwardLevelBtnFunc();
+    levelSelectFunctionality();
   }
 
   let gameStartBtn = document.querySelector(".start-btn");
