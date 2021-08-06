@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles/reset.css" />
-  <link rel="stylesheet" href="styles/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
-  <title>Grammar Quest</title>
-</head>
-
-<body>
-  <div id="levels-page">
-    <div id="levelsBox">
-      <button class="mainMenu">Main Menu</button>
-      <div class="changeLevelDiv">
-        <button class="changeLevel backwardSelectBtn">
-          <----- </button>
-            <button class="changeLevel selectBtn">Select</button>
-            <button class="changeLevel forwardSelectBtn">-----></button>
-      </div>
-    </div>
-  </div>
-
-  <div id="game">
-    <div class="app">
-      <div class="header-container">
-        <button class="levels-btn">Level Select</button>
-        <button id="home-page-music-btn" onclick="musicStart()" class="music-btn">
-          Music
-          <img class="music-btn-img" src="images/sound.png" />
-        </button>
-      </div>
-      <div class="hero-heading">Grammar Quest</div>
-      <button class="start-btn">Start</button>
-      <audio id="bubble-sound" src="./assets/bubble.mp3"></audio>
-      <audio id="earth-sound" loop src="./assets/earth.mp3"></audio>
-      <audio id="water-sound" loop src="./assets/water.mp3"></audio>
-      <audio id="castle-sound" loop src="./assets/castle.mp3"></audio>
-    </div>
-  </div>
-
-  <script src="scripts/main.js"></script>
-</body>
-
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles/reset.css" />
+        <link rel="stylesheet" href="styles/styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+            rel="stylesheet"
+            />
+        <title>Grammar Quest</title>
+    </head>
+    <body>
+        <div id="levels-page">
+            <div id="levelsBox">
+                <button class="mainMenu">Main Menu</button>
+                <div class="changeLevelDiv">
+                    <button class="changeLevel backwardSelectBtn"><-----</button>
+                    <button class="changeLevel selectBtn">Select</button>
+                    <button class="changeLevel forwardSelectBtn">-----></button>
+                </div>
+            </div>
+        </div>
+        <div id="game">
+            <div class="app">
+                <div class="header-container">
+                    <button class="levels-btn">Level Select</button>
+                    <button
+                        id="home-page-music-btn"
+                        onclick="musicStart()"
+                        class="music-btn"
+                        >
+                    Music
+                    <img class="music-btn-img" src="images/sound.png" />
+                    </button>
+                </div>
+                <div class="hero-heading">Grammar Quest</div>
+                <button class="start-btn">Start</button>
+                <audio id="bubble-sound" src="./assets/bubble.mp3"></audio>
+                <audio id="earth-sound" loop src="./assets/earth.mp3"></audio>
+                <audio id="water-sound" loop src="./assets/water.mp3"></audio>
+                <audio id="castle-sound" loop src="./assets/castle.mp3"></audio>
+            </div>
+        </div>
+        <script src="scripts/main.js"></script>
+    </body>
 </html>
