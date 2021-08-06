@@ -71,7 +71,6 @@ let init = (() => {
       showGamePage();
       hideLevelsPage();
       app.style.backgroundImage = `url("../images/${levels[i]}")`;
-
       if (levels[i] == "water.gif") {
         pauseEarthMusic();
         pauseCastleMusic();
@@ -81,28 +80,41 @@ let init = (() => {
         pauseWaterMusic();
         playCastleMusic();
       }
+
+      if (app.style.backgroundImage == 'url("../images/earth.gif")') {
+        pauseCastleMusic();
+        pauseWaterMusic();
+        playEarthMusic();
+      }
     });
 
-    let i = 0;
     let forwardSelectBtn = document.querySelector(".forwardSelectBtn");
     let backwardSelectBtn = document.querySelector(".backwardSelectBtn");
     levelsBox.style.backgroundImage = `url("../images/${levels[0]}")`;
+    let i = 0;
 
     forwardSelectBtn.addEventListener("click", () => {
       let levelsBox = document.querySelector("#levelsBox");
       let levelsPage = document.querySelector("#levels-page");
-      i++;
+      if (i < levels.length - 1) {
+        i++;
+      }
+
+      levelsPage.style.backgroundImage = `url("../images/${levels[i]}")`;
       levelsBox.style.backgroundImage = `url("../images/${levels[i]}")`;
       console.log(i);
       console.log(levels[i]);
     });
 
     backwardSelectBtn.addEventListener("click", () => {
-      i--;
+      if (i > 0) {
+        i--;
+      }
       console.log(i);
       console.log(levels[i]);
+      console.log(levels);
       let levelsPage = document.querySelector("#levels-page");
-
+      levelsPage.style.backgroundImage = `url("../images/${levels[i]}")`;
       levelsBox.style.backgroundImage = `url("../images/${levels[i]}")`;
     });
   }
@@ -117,7 +129,7 @@ let init = (() => {
 
   // })
 
-  let levels = ["earth.gif", "water.gif", "castle.gif"];
+  const levels = Object.freeze(["earth.gif", "water.gif", "castle.gif"]);
   //returns levels but filtered by undefined items so it doesnt break level select
 
   function removeHomePageContent() {
@@ -210,9 +222,9 @@ let init = (() => {
       },
       {
         question: "What's my name on Discord? ___",
-        choices: ["buug", "bug", "buggy"],
-        answer: "buug",
-        correctSentence: "What's my name on Discord? <u>buug</u>.",
+        choices: ["Wiz", "Wizz", "Wizard"],
+        answer: "Wiz",
+        correctSentence: "What's my name on Discord? <u>Wiz</u>.",
       },
       {
         question: "The _____ toy was stolen",
@@ -250,7 +262,6 @@ let init = (() => {
     if (option.textContent === question.answer) {
       option.classList.add("greenChange");
       removeGreenChange(option);
-
       displayWin(correctSentence);
     } else {
       option.classList.add("redChange");
