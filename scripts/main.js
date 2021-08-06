@@ -86,23 +86,24 @@ let init = (() => {
     let i = 0;
     let forwardSelectBtn = document.querySelector(".forwardSelectBtn");
     let backwardSelectBtn = document.querySelector(".backwardSelectBtn");
-    levelsBox.style.backgroundImage = `url("../images/${filteredLevels[0]}")`;
+    levelsBox.style.backgroundImage = `url("../images/${levels[0]}")`;
 
     forwardSelectBtn.addEventListener("click", () => {
       let levelsBox = document.querySelector("#levelsBox");
       let levelsPage = document.querySelector("#levels-page");
       i++;
-
-      levelsBox.style.backgroundImage = `url("../images/${filteredLevels[i]}")`;
-
+      levelsBox.style.backgroundImage = `url("../images/${levels[i]}")`;
+      console.log(i);
       console.log(levels[i]);
     });
 
     backwardSelectBtn.addEventListener("click", () => {
       i--;
+      console.log(i);
       console.log(levels[i]);
+      let levelsPage = document.querySelector("#levels-page");
 
-      levelsBox.style.backgroundImage = `url("../images/${filteredLevels[i]}")`;
+      levelsBox.style.backgroundImage = `url("../images/${levels[i]}")`;
     });
   }
 
@@ -118,9 +119,6 @@ let init = (() => {
 
   let levels = ["earth.gif", "water.gif", "castle.gif"];
   //returns levels but filtered by undefined items so it doesnt break level select
-  let filteredLevels = levels.filter(function (el) {
-    return el != null;
-  });
 
   function removeHomePageContent() {
     let gameStartBtn = document.querySelector(".start-btn");
