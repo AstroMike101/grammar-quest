@@ -273,3 +273,12 @@
   font-family: "Rowdies", cursive;
   opacity: 70%;
 }
+
+.mainMenu {
+  padding: 20px 50px;
+  position: relative;
+  bottom: 3.6em;
+  font-size: 1.5em;
+  font-family: "Rowdies", cursive;
+  opacity: 70%;
+}

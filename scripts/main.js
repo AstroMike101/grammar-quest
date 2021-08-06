@@ -52,6 +52,12 @@ let init = (() => {
     levelsPage.style.display = "none";
   }
 
+  let mainMenu = document.querySelector(".mainMenu");
+  mainMenu.addEventListener("click", () => {
+    hideLevelsPage();
+    showGamePage();
+  });
+
   let levelsSelectionBtn = document.querySelector(".levels-btn");
   levelsSelectionBtn.addEventListener("click", () => {
     hideGamePage();
