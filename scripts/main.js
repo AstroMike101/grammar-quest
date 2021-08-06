@@ -232,6 +232,12 @@ let init = (() => {
         answer: "kid's",
         correctSentence: "The <u>kid's</u> toy was stolen",
       },
+      {
+        question: "He told the man to help him ______",
+        choices: ["build", "built", "building"],
+        answer: "build",
+        correctSentence: "He told the man to help him <u>build</u>.",
+      },
     ];
 
     return quizArr;
