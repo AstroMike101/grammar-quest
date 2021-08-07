@@ -1,6 +1,6 @@
 # <p align="center">Preview</p>
 <p align="center">
-<img src = 'assets/preview.png' width = '800' height = '600'> </img>
+<img src = "images/preview.png" width = '800' height = '600'></img>
 </p>
 
 
