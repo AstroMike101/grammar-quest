@@ -205,42 +205,42 @@ let init = (() => {
     let createQuizArr = () => {
         let quizArr = [
             {
-                question: "____ exam was yesterday",
+                question: "____ exam was yesterday.",
                 choices: ["him", "he", "his"],
                 answer: "his",
                 correctSentence: "<u>His</u> exam was yesterday",
                 answered: false,
             },
             {
-                question: "The ___ was on the street",
+                question: "The ___ was on the street.",
                 choices: ["man", "men", "mens"],
                 answer: "man",
                 correctSentence: "The <u>man</u> was on the street",
                 answered: false,
             },
             {
-                question: "The _____ toy was stolen",
+                question: "The _____ toy was stolen.",
                 choices: ["kids", "kid", "kid's"],
                 answer: "kid's",
                 correctSentence: "The <u>kid's</u> toy was stolen",
                 answered: false,
             },
             {
-                question: "He told the man to help him ______",
+                question: "He told the man to help him ______.",
                 choices: ["build", "built", "building"],
                 answer: "build",
                 correctSentence: "He told the man to help him <u>build</u>",
                 answered: false,
             },
             {
-                question: "Timmy is ____ his homework",
+                question: "Timmy is ____ his homework.",
                 choices: ["do", "did", "doing"],
                 answer: "doing",
                 correctSentence: "Timmy is <u>doing</u> his homework",
                 answered: false,
             },
             {
-                question: "The monkey loves to __ bananas",
+                question: "The monkey loves to __ bananas.",
                 choices: ["eat", "eating", "eated"],
                 answer: "eat",
                 correctSentence: "The monkey loves to <u>eat</u> bananas",
@@ -256,10 +256,10 @@ let init = (() => {
                 answered: false,
             },
             {
-                question: "___ best friends since preschool",
-                choices: ["They're", "Their", "There"],
-                answer: "They're",
-                correctSentence: "<u>They're</u> best friends since preschool",
+                question: "They have ___ best friends since preschool.",
+                choices: ["been", "being", "be"],
+                answer: "been",
+                correctSentence: "They have <u>been</u> best friends since preschool.",
                 answered: false,
             },
 
@@ -273,7 +273,7 @@ let init = (() => {
                 answered: false,
             },
             {
-                question: "My phone number has two ___, it's easy to remember",
+                question: "My phone number has two ___, it's easy to remember.",
                 choices: ["7's", "7s", "7ss"],
                 answer: "7s",
                 correctSentence:
@@ -305,7 +305,7 @@ let init = (() => {
                 answered: false,
             },
             {
-                question: "We are _____ camping tomorrow",
+                question: "We are _____ camping tomorrow.",
                 choices: ["going", "go", "goes"],
                 answer: "going",
                 correctSentence:
@@ -344,14 +344,50 @@ let init = (() => {
                 "My mom <u>packed</u> my lunch for tomorrow!",
                 answered: false,
             },
+            {
+                question: "I ___ playing video games earlier.",
+                choices: ["was", "were", "when"],
+                answer: "was",
+                correctSentence:
+                "I <u>was</u> playing video games earlier",
+                answered: false,
+            },
+            {
+                question: "Let's __ to the video game store!",
+                choices: ["go", "going", "gone"],
+                answer: "go",
+                correctSentence:
+                "Let's <u>go</u> to the toy store!",
+                answered: false,
+            },
+            {
+                question: "Let's __ to the video game store!",
+                choices: ["go", "going", "gone"],
+                answer: "go",
+                correctSentence:
+                "Let's <u>go</u> to the toy store!",
+                answered: false,
+            },
+            {
+                question: "I am going to ____ the biggest rollarcoaster today!",
+                choices: ["ride", "riding", "ridden"],
+                answer: "ride",
+                correctSentence:
+                "I am going to <u>ride</u> the biggest rollarcoaster today!",
+                answered: false,
+            },
         ];
 
         return quizArr;
+        
+
     };
     // memory reset after browser refresh
     window.onbeforeunload = function (e) {
         localStorage.clear();
     };
+
+    
     /*
     function createQuizArr() {
         const quizArr = [
@@ -431,6 +467,7 @@ let init = (() => {
         if (option.textContent === question.answer) {
             option.classList.add("greenChange");
             removeGreenChange(option);
+            
 
             removeAskedQuesFromQuizArr(
                 question,
