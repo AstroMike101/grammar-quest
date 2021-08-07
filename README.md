@@ -11,7 +11,7 @@
 
 ## <p align = "left">Description</p>
 
-Grammar Quest is a game created for kids aged 3-12 years old. It features questions with a missing word in which the player clicks the correct option to fill it in. There is a score counter to keep track of score, as well as a map selection option for the player to choose the map & music they want to play with. 
+Grammar Quest is a game created for kids aged 3-12 years old. It features questions with a missing word in which the player clicks the correct option to fill it in. There is a score counter to keep track of score, as well as a map selection option for the player to choose the map & music they want to play with. This project was created for <a href= "https://itch.io/jam/top-jam-1">TOP-Jam 1 - Edutainment</a>
 
 ---
 
