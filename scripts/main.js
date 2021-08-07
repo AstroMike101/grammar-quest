@@ -241,11 +241,22 @@ let init = (() => {
                 correctSentence: "He told the man to help him <u>build</u>.",
                 answered: false,
             },
+            {
+                question: "Timmy is ____ his homework",
+                choices: ["do", "did", "doing"],
+                answer: "doing",
+                correctSentence: "Timmy is <u>doing</u> his homework.",
+                answered: false,
+            },
         ];
 
         return quizArr;
     };
-/*
+    // memory reset after browser refresh
+    window.onbeforeunload = function (e) {
+        localStorage.clear();
+    };
+    /*
     function createQuizArr() {
         const quizArr = [
             {
@@ -284,7 +295,6 @@ let init = (() => {
     }
 */
 
-
     function createRandomNum(arrLength) {
         let randomNum = Math.ceil(Math.random() * arrLength - 1);
 
@@ -297,11 +307,15 @@ let init = (() => {
         }, 500);
     }
 
-    function removeAskedQuesFromQuizArr(question, updatedQuizArr, randomQuestionIndex) {
+    function removeAskedQuesFromQuizArr(
+        question,
+        updatedQuizArr,
+        randomQuestionIndex
+    ) {
         // POTENTIALLY REMOVE SINCE UPDATE QUIZ ARR FUNCTION DOES THE SAME THING
-        let quizArr = JSON.parse(localStorage.getItem('quizArr'));
+        let quizArr = JSON.parse(localStorage.getItem("quizArr"));
         quizArr[randomQuestionIndex].answered = true;
-        localStorage.setItem( "quizArr", JSON.stringify(quizArr));
+        localStorage.setItem("quizArr", JSON.stringify(quizArr));
         console.log(quizArr);
     }
 
@@ -311,14 +325,23 @@ let init = (() => {
         }, 500);
     }
 
-    function answerCheck(option, question, updatedQuizArr, randomQuestionIndex) {
+    function answerCheck(
+        option,
+        question,
+        updatedQuizArr,
+        randomQuestionIndex
+    ) {
         let correctSentence = question.correctSentence;
 
         if (option.textContent === question.answer) {
             option.classList.add("greenChange");
             removeGreenChange(option);
 
-            removeAskedQuesFromQuizArr(question, updatedQuizArr, randomQuestionIndex);
+            removeAskedQuesFromQuizArr(
+                question,
+                updatedQuizArr,
+                randomQuestionIndex
+            );
 
             displayWin(correctSentence);
         } else {
@@ -343,7 +366,9 @@ let init = (() => {
         let answerNotifText = document.querySelector(".answer-notif-text");
         nextBtn.innerHTML = "Next ->";
         answerNotifText.innerHTML = "Well done!";
-        nextBtn.addEventListener("click", () => {playNextLevel()});
+        nextBtn.addEventListener("click", () => {
+            playNextLevel();
+        });
     }
 
     function displayWin(correctSentence) {
@@ -371,8 +396,8 @@ let init = (() => {
         // NOT IMPLEMENTED
         let numOfQuestions = quizArr.length;
         let numOfCompletedQuestions = 0;
-        quizArr.forEach(question => {
-            if(question.answer === 'true') {
+        quizArr.forEach((question) => {
+            if (question.answer === "true") {
                 ++numOfCompletedQuestions;
             }
         });
@@ -380,41 +405,37 @@ let init = (() => {
         if (numOfQuestions === numOfCompletedQuestions) {
             return "winner";
             // Play the winner function that displays the the user one
-        }
-        else {
+        } else {
             return "Continue Game";
         }
 
-        // Check all items in the array. 
+        // Check all items in the array.
         // If all have answer: true. Then return winner text "winner".
         // else if answer: false, return text "Continue game".
     }
 
     function questionRepetitionCheck(quizArr, randomQuestion) {
-        let newQuizArr = quizArr.filter( function(question) {
-            if(question.answered === false) {
+        let newQuizArr = quizArr.filter(function (question) {
+            if (question.answered === false) {
                 return true;
             }
         });
 
-
         // Checks if the question has been asked before.
         // If it has been asked before choose a different question
-
 
         // If the question has a answered property that is true the make
         // the program choose a different question
     }
 
     function updateQuizArr(quizArr) {
-        let updatedQuizArr = quizArr.filter( function(question) {
-            if(question.answered === false) {
+        let updatedQuizArr = quizArr.filter(function (question) {
+            if (question.answered === false) {
                 return true;
             }
         });
 
-        
-        localStorage.setItem( "quizArr", JSON.stringify(updatedQuizArr));
+        localStorage.setItem("quizArr", JSON.stringify(updatedQuizArr));
 
         return updatedQuizArr;
     }
@@ -422,21 +443,20 @@ let init = (() => {
     function startGameLogic() {
         // score variable is declared at the top of this init() function.
 
-        if(!localStorage.getItem("quizArr")) {
+        if (!localStorage.getItem("quizArr")) {
             let quizArr = createQuizArr();
-            localStorage.setItem( "quizArr", JSON.stringify(quizArr));
+            localStorage.setItem("quizArr", JSON.stringify(quizArr));
         }
-        
 
         let scoreBoard = document.querySelector(".score-board");
         scoreBoard.textContent = `Score: ${score}`;
 
-        let quizArr = JSON.parse(localStorage.getItem('quizArr'));
+        let quizArr = JSON.parse(localStorage.getItem("quizArr"));
         let updatedQuizArr = updateQuizArr(quizArr);
 
         let randomNum = createRandomNum(updatedQuizArr.length);
         let randomQuestion = updatedQuizArr[randomNum];
-        
+
         // gameWinCheck(quizArr);
         questionRepetitionCheck(updatedQuizArr, randomQuestion);
 
@@ -457,7 +477,12 @@ let init = (() => {
         gameOptionsArr.forEach((option) => {
             option.addEventListener("click", () => {
                 let randomQuestionIndex = randomNum;
-                answerCheck(option, randomQuestion, updatedQuizArr, randomQuestionIndex);
+                answerCheck(
+                    option,
+                    randomQuestion,
+                    updatedQuizArr,
+                    randomQuestionIndex
+                );
             });
         });
     }
