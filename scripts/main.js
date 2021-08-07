@@ -281,6 +281,20 @@ let init = (() => {
                 correctSentence:
                     "My phone number has two <u>7s</u>, it's easy to remember",
             },
+            {
+                question: "Look over ___!",
+                choices: ["there", "their", "they're"],
+                answer: "there",
+                correctSentence:
+                "Look over <u>there</u>!",
+            },
+            {
+                question: "Look over ___!",
+                choices: ["there", "their", "they're"],
+                answer: "there",
+                correctSentence:
+                "Look over <u>there</u>!",
+            },
         ];
 
         return quizArr;
