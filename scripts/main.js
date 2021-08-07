@@ -278,6 +278,7 @@ let init = (() => {
                 answer: "7s",
                 correctSentence:
                     "My phone number has two <u>7s</u>, it's easy to remember",
+                answered: false,
             },
             {
                 question: "Look over ___!",
@@ -285,6 +286,7 @@ let init = (() => {
                 answer: "there",
                 correctSentence:
                 "Look over <u>there</u>!",
+                answered: false,
             },
             {
                 question: "Let's see who can ___ faster!",
@@ -292,6 +294,7 @@ let init = (() => {
                 answer: "run",
                 correctSentence:
                 "Let's see who can <u>run</u> faster!",
+                answered: false,
             },
             {
                 question: "Quick! ____ a wild Pokemon!",
@@ -299,6 +302,7 @@ let init = (() => {
                 answer: "There's",
                 correctSentence:
                 "Quick! <u>There's</u> a wild Pokemon!",
+                answered: false,
             },
             {
                 question: "We are _____ camping tomorrow",
@@ -306,6 +310,7 @@ let init = (() => {
                 answer: "going",
                 correctSentence:
                 "We are <u>going</u> camping tomorrow",
+                answered: false,
             },
             {
                 question: "My mom said I have to help her ___ the dishes.",
@@ -313,6 +318,7 @@ let init = (() => {
                 answer: "clean",
                 correctSentence:
                 "My mom said I have to help her <u>clean</u> the dishes.",
+                answered: false,
             },
             {
                 question: "__ of these two cookies taste better? Chocolate Chip or Snickerdoodle?",
@@ -320,6 +326,7 @@ let init = (() => {
                 answer: "Which",
                 correctSentence:
                 "<u>Which</u> of these cookies are tasty? Chocolate Chip or Snickerdoodle?",
+                answered: false,
             },
             {
                 question: "Do you want to ___ to the movies with me?",
@@ -327,6 +334,7 @@ let init = (() => {
                 answer: "come",
                 correctSentence:
                 "Do you want to <u>come</u> to the movies with me?",
+                answered: false,
             },
             {
                 question: "My mom ____ my lunch for tomorrow!",
@@ -334,6 +342,7 @@ let init = (() => {
                 answer: "packed",
                 correctSentence:
                 "My mom <u>packed</u> my lunch for tomorrow!",
+                answered: false,
             },
         ];
 
