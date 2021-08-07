@@ -108,9 +108,7 @@ let init = (() => {
             if (i > 0) {
                 i--;
             }
-            console.log(i);
-            console.log(levels[i]);
-            console.log(levels);
+
             let levelsPage = document.querySelector("#levels-page");
             levelsPage.style.backgroundImage = `url("../images/${levels[i]}")`;
             levelsBox.style.backgroundImage = `url("../images/${levels[i]}")`;
@@ -363,10 +361,6 @@ let init = (() => {
         let quizArr = JSON.parse(localStorage.getItem("quizArr"));
         quizArr[randomQuestionIndex].answered = true;
         localStorage.setItem("quizArr", JSON.stringify(quizArr));
-        console.log(quizArr.length);
-        if (quizArr.length <=1) {
-            localStorage.clear()
-        }
     }
 
     function removeGreenChange(option) {
@@ -442,26 +436,35 @@ let init = (() => {
         answerNotifText.textContent = "Wrong";
     }
 
-    function gameWinCheck(quizArr) {
-        // NOT IMPLEMENTED
-        let numOfQuestions = quizArr.length;
-        let numOfCompletedQuestions = 0;
-        quizArr.forEach((question) => {
-            if (question.answer === "true") {
-                ++numOfCompletedQuestions;
-            }
-        });
 
-        if (numOfQuestions === numOfCompletedQuestions) {
-            return "winner";
-            // Play the winner function that displays the the user one
-        } else {
-            return "Continue Game";
+    function removeAllContent() {
+        let game = document.querySelector('#game');
+        game.style.display = 'none';
+    }
+
+    function winGameDisplay() {
+        removeAllContent();
+
+        let body = document.querySelector('body');
+
+        let winBackground = document.createElement('div');
+        winBackground.classList.add('app');
+        body.appendChild(winBackground);
+
+        let winDisplay = document.createElement('div');
+        winDisplay.innerHTML = 'Congratulations! You Win!';
+        winDisplay.classList.add('hero-heading');
+        winBackground.appendChild(winDisplay);
+    }
+
+    function gameWinCheck(quizArr) {
+        // If the quizArr length is 0 display win
+
+        if (quizArr.length === 0) {
+            winGameDisplay();
         }
 
-        // Check all items in the array.
-        // If all have answer: true. Then return winner text "winner".
-        // else if answer: false, return text "Continue game".
+        return;
     }
 
     function questionRepetitionCheck(quizArr, randomQuestion) {
@@ -470,12 +473,6 @@ let init = (() => {
                 return true;
             }
         });
-
-        // Checks if the question has been asked before.
-        // If it has been asked before choose a different question
-
-        // If the question has a answered property that is true the make
-        // the program choose a different question
     }
 
     function updateQuizArr(quizArr) {
@@ -503,6 +500,8 @@ let init = (() => {
 
         let quizArr = JSON.parse(localStorage.getItem("quizArr"));
         let updatedQuizArr = updateQuizArr(quizArr);
+
+        gameWinCheck(updatedQuizArr);
 
         let randomNum = createRandomNum(updatedQuizArr.length);
         let randomQuestion = updatedQuizArr[randomNum];
