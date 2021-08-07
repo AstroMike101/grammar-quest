@@ -102,8 +102,6 @@ let init = (() => {
 
             levelsPage.style.backgroundImage = `url("../images/${levels[i]}")`;
             levelsBox.style.backgroundImage = `url("../images/${levels[i]}")`;
-            console.log(i);
-            console.log(levels[i]);
         });
 
         backwardSelectBtn.addEventListener("click", () => {
@@ -206,6 +204,48 @@ let init = (() => {
         headerContainer.appendChild(scoreBoard);
     }
 
+    let createQuizArr = () => {
+        let quizArr = [
+            {
+                question: "____ exam was yesterday",
+                choices: ["him", "he", "his"],
+                answer: "his",
+                correctSentence: "<u>His</u> exam was yesterday",
+                answered: false,
+            },
+            {
+                question: "The ___ was on the street",
+                choices: ["man", "men", "mens"],
+                answer: "man",
+                correctSentence: "The <u>man</u> was on the street",
+                answered: false,
+            },
+            {
+                question: "What's my name on Discord? ___",
+                choices: ["Wiz", "Wizz", "Wizard"],
+                answer: "Wiz",
+                correctSentence: "What's my name on Discord? <u>Wiz</u>.",
+                answered: false,
+            },
+            {
+                question: "The _____ toy was stolen",
+                choices: ["kids", "kid", "kid's"],
+                answer: "kid's",
+                correctSentence: "The <u>kid's</u> toy was stolen",
+                answered: false,
+            },
+            {
+                question: "He told the man to help him ______",
+                choices: ["build", "built", "building"],
+                answer: "build",
+                correctSentence: "He told the man to help him <u>build</u>.",
+                answered: false,
+            },
+        ];
+
+        return quizArr;
+    };
+/*
     function createQuizArr() {
         const quizArr = [
             {
@@ -242,6 +282,8 @@ let init = (() => {
 
         return quizArr;
     }
+*/
+
 
     function createRandomNum(arrLength) {
         let randomNum = Math.ceil(Math.random() * arrLength - 1);
@@ -255,19 +297,29 @@ let init = (() => {
         }, 500);
     }
 
+    function removeAskedQuesFromQuizArr(question, updatedQuizArr, randomQuestionIndex) {
+        // POTENTIALLY REMOVE SINCE UPDATE QUIZ ARR FUNCTION DOES THE SAME THING
+        let quizArr = JSON.parse(localStorage.getItem('quizArr'));
+        quizArr[randomQuestionIndex].answered = true;
+        localStorage.setItem( "quizArr", JSON.stringify(quizArr));
+        console.log(quizArr);
+    }
+
     function removeGreenChange(option) {
         setTimeout(function () {
             option.classList.remove("greenChange");
         }, 500);
     }
 
-    function answerCheck(option, question) {
+    function answerCheck(option, question, updatedQuizArr, randomQuestionIndex) {
         let correctSentence = question.correctSentence;
-        console.log(correctSentence);
 
         if (option.textContent === question.answer) {
             option.classList.add("greenChange");
             removeGreenChange(option);
+
+            removeAskedQuesFromQuizArr(question, updatedQuizArr, randomQuestionIndex);
+
             displayWin(correctSentence);
         } else {
             option.classList.add("redChange");
@@ -275,8 +327,6 @@ let init = (() => {
 
             displayLoss();
         }
-
-        // cleanOpArray();
     }
 
     function showNextBtn() {
@@ -293,7 +343,7 @@ let init = (() => {
         let answerNotifText = document.querySelector(".answer-notif-text");
         nextBtn.innerHTML = "Next ->";
         answerNotifText.innerHTML = "Well done!";
-        nextBtn.addEventListener("click", () => playNextLevel());
+        nextBtn.addEventListener("click", () => {playNextLevel()});
     }
 
     function displayWin(correctSentence) {
@@ -317,15 +367,78 @@ let init = (() => {
         answerNotifText.textContent = "Wrong";
     }
 
+    function gameWinCheck(quizArr) {
+        // NOT IMPLEMENTED
+        let numOfQuestions = quizArr.length;
+        let numOfCompletedQuestions = 0;
+        quizArr.forEach(question => {
+            if(question.answer === 'true') {
+                ++numOfCompletedQuestions;
+            }
+        });
+
+        if (numOfQuestions === numOfCompletedQuestions) {
+            return "winner";
+            // Play the winner function that displays the the user one
+        }
+        else {
+            return "Continue Game";
+        }
+
+        // Check all items in the array. 
+        // If all have answer: true. Then return winner text "winner".
+        // else if answer: false, return text "Continue game".
+    }
+
+    function questionRepetitionCheck(quizArr, randomQuestion) {
+        let newQuizArr = quizArr.filter( function(question) {
+            if(question.answered === false) {
+                return true;
+            }
+        });
+
+
+        // Checks if the question has been asked before.
+        // If it has been asked before choose a different question
+
+
+        // If the question has a answered property that is true the make
+        // the program choose a different question
+    }
+
+    function updateQuizArr(quizArr) {
+        let updatedQuizArr = quizArr.filter( function(question) {
+            if(question.answered === false) {
+                return true;
+            }
+        });
+
+        
+        localStorage.setItem( "quizArr", JSON.stringify(updatedQuizArr));
+
+        return updatedQuizArr;
+    }
+
     function startGameLogic() {
         // score variable is declared at the top of this init() function.
+
+        if(!localStorage.getItem("quizArr")) {
+            let quizArr = createQuizArr();
+            localStorage.setItem( "quizArr", JSON.stringify(quizArr));
+        }
+        
 
         let scoreBoard = document.querySelector(".score-board");
         scoreBoard.textContent = `Score: ${score}`;
 
-        let quizArr = createQuizArr();
-        let randomNum = createRandomNum(quizArr.length);
-        let randomQuestion = quizArr[randomNum];
+        let quizArr = JSON.parse(localStorage.getItem('quizArr'));
+        let updatedQuizArr = updateQuizArr(quizArr);
+
+        let randomNum = createRandomNum(updatedQuizArr.length);
+        let randomQuestion = updatedQuizArr[randomNum];
+        
+        // gameWinCheck(quizArr);
+        questionRepetitionCheck(updatedQuizArr, randomQuestion);
 
         let gameQuestion = document.querySelector(".quiz-question-text");
         gameQuestion.innerHTML = randomQuestion.question;
@@ -343,8 +456,8 @@ let init = (() => {
         let gameOptionsArr = document.querySelectorAll(".game-option");
         gameOptionsArr.forEach((option) => {
             option.addEventListener("click", () => {
-                console.log(option);
-                answerCheck(option, randomQuestion);
+                let randomQuestionIndex = randomNum;
+                answerCheck(option, randomQuestion, updatedQuizArr, randomQuestionIndex);
             });
         });
     }
