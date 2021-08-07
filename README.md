@@ -28,9 +28,7 @@ Grammar Quest is a game created for kids aged 3-12 years old. It features questi
 ---
 ### <p align = "left">Credits</p>
 <p align= "left">
-Developers:
-
-<p><a href="https://github.com/AstroMike101">AstroMike101</a> & <a href="https://github.com/ec-rilo">ec-rilo</a> </p>
+Developers:<p><a href="https://github.com/AstroMike101">AstroMike101</a> & <a href="https://github.com/ec-rilo">ec-rilo</a> </p>
 
 
 Music from: https://www.fesliyanstudios.com/royalty-free-music/downloads-c/8-bit-music/6
