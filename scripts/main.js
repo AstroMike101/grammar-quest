@@ -70,7 +70,7 @@ let init = (() => {
         selectBtn.addEventListener("click", () => {
             showGamePage();
             hideLevelsPage();
-            app.style.backgroundImage = `url("../images/${levels[i]}")`;
+            app.style.backgroundImage = `url("./images/${levels[i]}")`;
             if (levels[i] === "water.gif") {
                 pauseEarthMusic();
                 pauseCastleMusic();
@@ -81,7 +81,7 @@ let init = (() => {
                 playCastleMusic();
             }
 
-            if (app.style.backgroundImage == 'url("../images/earth.gif")') {
+            if (app.style.backgroundImage == 'url("./images/earth.gif")') {
                 pauseCastleMusic();
                 playEarthMusic();
                 pauseWaterMusic();
@@ -90,7 +90,7 @@ let init = (() => {
 
         let forwardSelectBtn = document.querySelector(".forwardSelectBtn");
         let backwardSelectBtn = document.querySelector(".backwardSelectBtn");
-        levelsBox.style.backgroundImage = `url("../images/${levels[0]}")`;
+        levelsBox.style.backgroundImage = `url("./images/${levels[0]}")`;
         let i = 0;
 
         forwardSelectBtn.addEventListener("click", () => {
@@ -100,8 +100,8 @@ let init = (() => {
                 i++;
             }
 
-            levelsPage.style.backgroundImage = `url("../images/${levels[i]}")`;
-            levelsBox.style.backgroundImage = `url("../images/${levels[i]}")`;
+            levelsPage.style.backgroundImage = `url("./images/${levels[i]}")`;
+            levelsBox.style.backgroundImage = `url("./images/${levels[i]}")`;
         });
 
         backwardSelectBtn.addEventListener("click", () => {
@@ -110,8 +110,8 @@ let init = (() => {
             }
 
             let levelsPage = document.querySelector("#levels-page");
-            levelsPage.style.backgroundImage = `url("../images/${levels[i]}")`;
-            levelsBox.style.backgroundImage = `url("../images/${levels[i]}")`;
+            levelsPage.style.backgroundImage = `url("./images/${levels[i]}")`;
+            levelsBox.style.backgroundImage = `url("./images/${levels[i]}")`;
         });
     }
 
