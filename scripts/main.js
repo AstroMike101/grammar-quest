@@ -221,13 +221,6 @@ let init = (() => {
                 answered: false,
             },
             {
-                question: "What's my name on Discord? ___",
-                choices: ["Wiz", "Wizz", "Wizard"],
-                answer: "Wiz",
-                correctSentence: "What's my name on Discord? <u>Wiz</u>.",
-                answered: false,
-            },
-            {
                 question: "The _____ toy was stolen",
                 choices: ["kids", "kid", "kid's"],
                 answer: "kid's",
@@ -238,15 +231,55 @@ let init = (() => {
                 question: "He told the man to help him ______",
                 choices: ["build", "built", "building"],
                 answer: "build",
-                correctSentence: "He told the man to help him <u>build</u>.",
+                correctSentence: "He told the man to help him <u>build</u>",
                 answered: false,
             },
             {
                 question: "Timmy is ____ his homework",
                 choices: ["do", "did", "doing"],
                 answer: "doing",
-                correctSentence: "Timmy is <u>doing</u> his homework.",
+                correctSentence: "Timmy is <u>doing</u> his homework",
                 answered: false,
+            },
+            {
+                question: "The monkey loves to __ bananas",
+                choices: ["eat", "eating", "eated"],
+                answer: "eat",
+                correctSentence: "The monkey loves to <u>eat</u> bananas",
+                answered: false,
+            },
+            {
+                question:
+                    "Before playing video games, you have to _____ your homework",
+                choices: ["finish", "finishing", "finished"],
+                answer: "finish",
+                correctSentence:
+                    "Before playing video games, you have to <u>finish</u> your homework",
+                answered: false,
+            },
+            {
+                question: "___ best friends since preschool",
+                choices: ["They're", "Their", "There"],
+                answer: "They're",
+                correctSentence: "<u>They're</u> best friends since preschool",
+                answered: false,
+            },
+
+            {
+                question:
+                    'Daniel called Samuel out loud and said "Sam! Can you __ me?"',
+                choices: ["hear", "here", "hearing"],
+                answer: "hear",
+                correctSentence:
+                    'Daniel called Samuel out loud and said "Sam! Can you <u>hear</u> me?"',
+                answered: false,
+            },
+            {
+                question: "My phone number has two ___, it's easy to remember",
+                choices: ["7's", "7s", "7ss"],
+                answer: "7s",
+                correctSentence:
+                    "My phone number has two <u>7s</u>, it's easy to remember",
             },
         ];
 
@@ -316,7 +349,10 @@ let init = (() => {
         let quizArr = JSON.parse(localStorage.getItem("quizArr"));
         quizArr[randomQuestionIndex].answered = true;
         localStorage.setItem("quizArr", JSON.stringify(quizArr));
-        console.log(quizArr);
+        console.log(quizArr.length);
+        if (quizArr.length <=1) {
+            localStorage.clear()
+        }
     }
 
     function removeGreenChange(option) {
