@@ -147,7 +147,7 @@ let init = (() => {
 
         let musicBtn = document.createElement("img");
         musicBtn.classList.add("music-btn-img");
-        musicBtn.setAttribute("src", "../../images/sound.png");
+        musicBtn.setAttribute("src", "./images/sound.png");
         musicBtnContainer.appendChild(musicBtn);
 
         musicBtn.addEventListener("click", () => {
