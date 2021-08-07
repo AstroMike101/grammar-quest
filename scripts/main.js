@@ -392,6 +392,16 @@ let init = (() => {
         answerNotifText.textContent = "Wrong";
     }
 
+
+    function removeAllContent() {
+        let game = document.querySelector('#game');
+        game.style.display = 'none';
+    }
+
+    function winGameDisplay() {
+        removeAllContent();
+    }
+
     function gameWinCheck(quizArr) {
         // NOT IMPLEMENTED
         let numOfQuestions = quizArr.length;
@@ -403,15 +413,11 @@ let init = (() => {
         });
 
         if (numOfQuestions === numOfCompletedQuestions) {
-            return "winner";
+            winGameDisplay();
             // Play the winner function that displays the the user one
-        } else {
-            return "Continue Game";
         }
 
-        // Check all items in the array.
-        // If all have answer: true. Then return winner text "winner".
-        // else if answer: false, return text "Continue game".
+        return;
     }
 
     function questionRepetitionCheck(quizArr, randomQuestion) {
