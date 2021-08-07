@@ -287,11 +287,53 @@ let init = (() => {
                 "Look over <u>there</u>!",
             },
             {
-                question: "Look over ___!",
-                choices: ["there", "their", "they're"],
-                answer: "there",
+                question: "Let's see who can ___ faster!",
+                choices: ["run", "ran", "running"],
+                answer: "run",
                 correctSentence:
-                "Look over <u>there</u>!",
+                "Let's see who can <u>run</u> faster!",
+            },
+            {
+                question: "Quick! ____ a wild Pokemon!",
+                choices: ["There's", "Their", "They're"],
+                answer: "There's",
+                correctSentence:
+                "Quick! <u>There's</u> a wild Pokemon!",
+            },
+            {
+                question: "We are _____ camping tomorrow",
+                choices: ["going", "go", "goes"],
+                answer: "going",
+                correctSentence:
+                "We are <u>going</u> camping tomorrow",
+            },
+            {
+                question: "My mom said I have to help her ___ the dishes.",
+                choices: ["clean", "cleaning", "cleaned"],
+                answer: "clean",
+                correctSentence:
+                "My mom said I have to help her <u>clean</u> the dishes.",
+            },
+            {
+                question: "__ of these two cookies taste better? Chocolate Chip or Snickerdoodle?",
+                choices: ["Which", "Witch", "Wich"],
+                answer: "Which",
+                correctSentence:
+                "<u>Which</u> of these cookies are tasty? Chocolate Chip or Snickerdoodle?",
+            },
+            {
+                question: "Do you want to ___ to the movies with me?",
+                choices: ["come", "came", "coming"],
+                answer: "come",
+                correctSentence:
+                "Do you want to <u>come</u> to the movies with me?",
+            },
+            {
+                question: "My mom ____ my lunch for tomorrow!",
+                choices: ["packed", "packing", "pack"],
+                answer: "packed",
+                correctSentence:
+                "My mom <u>packed</u> my lunch for tomorrow!",
             },
         ];
 
