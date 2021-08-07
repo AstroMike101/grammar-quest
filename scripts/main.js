@@ -105,7 +105,7 @@ let init = (() => {
         });
 
         backwardSelectBtn.addEventListener("click", () => {
-            if (i > 0) {
+            if (i > 0) { 
                 i--;
             }
 
@@ -115,15 +115,7 @@ let init = (() => {
         });
     }
 
-    // let forwardSelectBtn = document.querySelector('.forwardSelectBtn')
-
-    // i = 0;
-    // forwardSelectBtn.addEventListener('click', ()=> {
-    //     let levelsBox = document.querySelector('#levelsBox');
-    //     levelsBox.style.backgroundImage = `url("../images/${levels[i]}")`
-    //     i +=1
-
-    // })
+   
 
     const levels = Object.freeze(["earth.gif", "water.gif", "castle.gif"]);
     //returns levels but filtered by undefined items so it doesnt break level select
@@ -387,45 +379,6 @@ let init = (() => {
         localStorage.clear();
     };
 
-    
-    /*
-    function createQuizArr() {
-        const quizArr = [
-            {
-                question: "____ exam was yesterday",
-                choices: ["him", "he", "his"],
-                answer: "his",
-                correctSentence: "<u>His</u> exam was yesterday",
-            },
-            {
-                question: "The ___ was on the street",
-                choices: ["man", "men", "mens"],
-                answer: "man",
-                correctSentence: "The <u>man</u> was on the street",
-            },
-            {
-                question: "What's my name on Discord? ___",
-                choices: ["Wiz", "Wizz", "Wizard"],
-                answer: "Wiz",
-                correctSentence: "What's my name on Discord? <u>Wiz</u>.",
-            },
-            {
-                question: "The _____ toy was stolen",
-                choices: ["kids", "kid", "kid's"],
-                answer: "kid's",
-                correctSentence: "The <u>kid's</u> toy was stolen",
-            },
-            {
-                question: "He told the man to help him ______",
-                choices: ["build", "built", "building"],
-                answer: "build",
-                correctSentence: "He told the man to help him <u>build</u>.",
-            },
-        ];
-
-        return quizArr;
-    }
-*/
 
     function createRandomNum(arrLength) {
         let randomNum = Math.ceil(Math.random() * arrLength - 1);
